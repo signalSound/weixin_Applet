@@ -1,0 +1,16 @@
+@import '/static/css/iconfont.wxss';
+@import '/static/css/public.wxss';
+@import '/static/css/private.wxss';
+
+page {
+  /* background-color: #f8f8f8; */
+  letter-spacing: 1px;
+  padding-bottom: 20rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+  background-color: transparent;
+}

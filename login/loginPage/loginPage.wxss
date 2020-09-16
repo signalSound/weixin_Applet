@@ -1,0 +1,90 @@
+.login {
+  padding: 0 75rpx;
+}
+.login-mobail {
+  padding-right: 50rpx;
+}
+.login-bottom-border {
+  width: 70rpx;
+  height: 8rpx;
+  background-color: #F73D57;
+  border-radius: 4rpx;
+}
+.login-groud {
+  position: relative;
+}
+.forgetPass {
+  padding-left: 30rpx;
+}
+.login-inputs {
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 44rpx;
+  padding-left: 30rpx;
+  background-color: #f5f5f5;
+  padding-right: 200rpx;
+}
+.login-code {
+  position: absolute;
+  right: 30rpx;
+  bottom: 25rpx
+}
+.login-btn {
+  background-color: #F73D57;
+  color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  /* width: 80%; */
+  margin: 0 auto 0;
+}
+.login-agreem {
+  position: relative;
+  padding-left: 60rpx;
+}
+.login-cirle {
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 1px solid #555;
+  left: 30rpx;
+}
+.loginWeixin {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.mt_200 {
+  margin-top: 200rpx;
+}
+.login-selected {
+  /* position: relative; */
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 1px solid #F73D57;
+  left: 30rpx;
+}
+.login-selected::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 20rpx;
+  height: 20rpx;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  background-color: #F73D57;
+}
+.show-author {
+  text-align: center;
+}
+.hide{
+  display: none;
+ }
+ .show{
+  display: block;
+ }

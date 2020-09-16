@@ -1,0 +1,3 @@
+<textarea class='textarea' placeholder='请输入退款理由' maxlength='-1'
+value='{{params.refundContent}}' bindinput='handleReason'></textarea>
+<view class="btn" bindtap="save">提交</view>

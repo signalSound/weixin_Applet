@@ -1,0 +1,115 @@
+.orderPaid {
+  background-color: #F3F3F3;
+  height: 100vh;
+}
+.orderPaid-time {
+  background-color: #fff;
+}
+.orderPaid-time-count {
+  padding-bottom: 20rpx;
+}
+.orderPaid-address {
+  background-color: #fff;
+  padding-top: 20rpx;
+  /* border-top: 1px solid #F3F3F3; */
+}
+.orderPaid-arrow {
+  width: 15rpx;
+  height: 25rpx;
+}
+.orderPaid-address-details  {
+  padding: 15rpx 0 20rpx 0;
+}
+.commodity {
+  background-color: #fff;
+  height: 180rpx;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #F3F3F3;
+}
+.commodity-img {
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 20rpx;
+}
+.fee_service {
+  height: 60rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #F3F3F3;
+}
+
+
+.fee_service-height {
+  height: 60rpx;
+  border-bottom: 1px solid #F3F3F3;
+}
+.order-no {
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+}
+.paid-operation {
+  line-height: 1;
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+}
+.pay-number {
+  /* height: 100%; */
+  background-color: #fff;
+}
+.paid-now {
+  width: 220rpx;
+  text-align: center;
+  background-color: #F73D57;
+  height: 100%;
+  line-height: 100rpx;
+}
+.cancel-order {
+  background-color: #ddd;
+  height: 100%;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.paid-select {
+   width: 30rpx;
+   height: 30rpx;
+   border-radius: 50%;
+   border: 1px solid#ddd;
+   position: relative;
+}
+.paid-select-dot::after {
+  content: '';
+  display: block;
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #F73D57;
+  border-radius: 50%;
+  position: absolute;
+  top: 5rpx;
+  left: 4.8rpx;
+}
+.fee-service-pay{
+  vertical-align: middle;
+  width: 30rpx;
+  height: 30rpx;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.yq{
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 2px solid #F73D57;
+  padding: 5rpx;
+  box-sizing: border-box;
+}
+.yuan{
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+  background: #F73D57;
+}

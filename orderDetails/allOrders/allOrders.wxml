@@ -1,0 +1,84 @@
+<view class="allOrder">
+	<view class=' flex flex_center pd_20'>
+		<view class="search flex_1">
+
+			<input class="fontSize_30 bg_f5 inputs" value='{{params.keyWord}}' placeholder="请输入商品名称/订单号" bindconfirm="handleSearch" bindinput='handleVal'></input>
+			<icon type="search" size="18" color="#999" class='sousuo' />
+		</view>
+		<text class="color_555 fontSize_30"  bindtap="handleSearch">搜索</text>
+
+	</view>
+
+
+	<view class="flex nums justify_sb fontSize_26 color_bbb">
+		<view class="{{index === '0'? 'actived': ''}}" catchtap='handleBtnAll' data-index="0">全部</view>
+		<view class="{{index === '1'? 'actived': ''}}" catchtap='handleBtnAll' data-index="1">待付款</view>
+		<view class="{{index === '2'? 'actived': ''}}" catchtap='handleBtnAll' data-index="2">待发货</view>
+		<view class="{{index === '3'? 'actived': ''}}" catchtap='handleBtnAll' data-index="3">待收货</view>
+		<view class="{{index === '4'? 'actived': ''}}" catchtap='handleBtnAll' data-index="4">已完成</view>
+	</view>
+</view>
+
+<view class="powdered  bg_f5 " wx:for="{{orderList}}" wx:for-item="item1" wx:key="{{item1.id}}" data-data='{{item1}}' bindtap='toOrderDetail'>
+	<view class="flex pd_30  justify_sb cancelOrder color_bbb fontSize_24 mt_20">
+		<view>订单编号：{{item1.orderSn}} <text class="color_555" catchtap="copy" data-orderSn='{{item1.orderSn}}'>复制</text></view>
+		<view class="color_f73 font_weight">{{item1.orderStatusText}}</view>
+	</view>
+	<view class="flex powdered-box bg_fff" wx:for="{{item1.goodsList}}" wx:for-item="item2" wx:key="{{item2.id}}">
+		<view class="p_20">
+			<image class="imgs" src="{{item2.picUrl}}"></image>
+		</view>
+		<view class="fontSize_24 color_999 p_20 flex_1">
+			<view class="fontSize_30 color_555 mt_10 esp mb_10">{{item2.goodsName}}</view>
+			<view>{{item2.specifications}}</view>
+			<view class="mt_20"> <text class="color_f73 font_weight">￥{{item2.price}}</text></view>
+		</view>
+		<view class="color_999  add fontSize_24">× {{item2.number}}</view>
+	</view>
+
+	<view class="flex justify_sb allMoney pd_30" wx:if='{{item1.aftersaleStatus === 0}}'>
+		<view></view>
+		<view class="fontSize_24 color_bbb">共计{{'1'}}件商品 <text class=" color_555">订单金额：<text class="color_f73 font_weight">￥{{item1.actualPrice}}</text> </text></view>
+	</view>
+	<!-- <view class="flex justify_sb flex_center countTime pd_30 fontSize_24" wx:if='{{item1.aftersaleStatus === 0}}'>
+		<view class="color_f73"></view>
+		<view class=" color_bbb" wx:if='{{item1.handleOption.delete === true}}'><text class="color_999 btnCancel delectBtn" catchtap="delectBtn" data-id='{{item1.id}}'>删除订单</text></view>
+	</view> -->
+	<view class="flex justify_sb flex_center countTime pd_30 fontSize_24">
+		<!-- <view class="color_f73">14分48秒后自动取消</view> -->
+		<view></view>
+		<view class=" color_bbb flex flex_center">
+			<text class="color_999 btnCancel" catchtap="CancelBtn" data-id='{{item1.id}}'
+			wx:if='{{item1.handleOption.cancel === true }}'>取消订单</text>
+			<text class="color_999 btnCancel"  data-id='{{item1.id}}' bindtap="tockwl"
+			wx:if='{{item1.handleOption.logistics === true }}'>查看物流</text>
+			<text  class="color_999 btnCancel" catchtap="toTxyy" data-id='{{item1.id}}'
+			wx:if='{{item1.handleOption.refund === true }}'>申请退款</text>
+			<button  class="color_999 btnCancel btn_kf" open-type='contact'
+			wx:if='{{item1.handleOption.customer === true }}'>联系客服</button>
+			<!-- <button  class="color_999 btnCancel btn_kf" open-type='contact'
+			wx:if='{{item1.handleOption.customer === true }}'>申请退货</button> -->
+			<text  class="color_f73 btnPay" catchtap="piadBtn" data-id='{{item1.id}}'
+			wx:if='{{item1.handleOption.pay === true }}'>立即支付</text>
+			<text  class="color_f73 btnPay" catchtap="conformBtn" data-id='{{item1.id}}'
+			wx:if='{{item1.handleOption.confirm === true }}'>确认收货</text>
+		</view>
+</view>
+
+	<!-- <view class="flex justify_sb flex_center countTime pd_30 fontSize_24" wx:if='{{item1.handleOption.confirm === true}}'>
+		<view></view>
+		<view class=" color_bbb flex flex_center">
+			<text class="color_999 btnCancel"  data-id='{{item1.id}}'>查看物流</text>
+			<text  class="color_999 btnCancel" catchtap="toTxyy" data-id='{{item1.id}}'>申请退货</text>
+			<text  class="color_f73 btnPay" catchtap="conformBtn" data-id='{{item1.id}}'>确认收货</text>
+		</view>
+	</view> -->
+	<!-- <view class="flex justify_sb flex_center countTime pd_30 fontSize_24" wx:if='{{item1.handleOption.refund === true}}'>
+		<view></view>
+		<view class=" color_bbb"><text  class="color_999 btnCancel" catchtap="toTxyy" data-id='{{item1.id}}'>申请退款</text></view>
+	</view> -->
+</view>
+<!-- 提示订单数量 -->
+<view class='none fontSize_30 color_999' wx:if="{{orderList.length == total}}">
+	没有更多数据
+</view>

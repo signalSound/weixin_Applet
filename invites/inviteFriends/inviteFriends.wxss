@@ -1,0 +1,36 @@
+.inviteF {
+  height: 100Vh;
+  background: #F5F5F5;
+}
+.invite_bg {
+  height: 300rpx;
+  background: linear-gradient(to right,#F73D3D,#F76568);
+}
+.invite_bg:nth-of-type(1){
+  box-sizing: border-box;
+  padding: 55rpx 0 8rpx 0;
+}
+.invite_text{
+  box-sizing: border-box;
+  margin: 30rpx 0;  
+}
+
+.invite_cen_box {
+  height: 340rpx;
+  background: #fff;
+}
+.invite_cen_box:nth-of-type(1) {
+  padding-top: 30rpx;
+}
+.address_btn {
+  background-color: #F73D57;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  width: 90%;
+  margin: 40rpx auto 0;
+}
+.invite-top {
+  margin-top: 290rpx;
+}

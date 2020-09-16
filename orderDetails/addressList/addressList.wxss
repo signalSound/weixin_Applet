@@ -1,0 +1,57 @@
+page {
+  background-color: #F3F3F3;
+}
+.address_bg {
+}
+.address-box {
+  background-color: #fff;
+  border-top: 1px solid #f3f3f3;
+  border-bottom: 1px solid #f3f3f3;
+}
+.address {
+  padding: 20rpx 0;
+}
+.address_text {
+   padding-bottom: 40rpx
+}
+.setAddress {
+  background-color: #fff;
+  height: 70rpx;
+  border-bottom: 1px solid #f3f3f3;
+}
+.address_btn {
+  background-color: #F73D57;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  width: 90%;
+  margin: 225rpx auto 0;
+}
+.select {
+  width: 30rpx;
+  height: 30rpx;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.selected {
+  position: relative;
+  width: 30rpx;
+  height: 30rpx;
+  border: 1px solid #F73D57;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.selected::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background-color: #F73D57;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

@@ -1,0 +1,46 @@
+<view wx:if='{{dataList.length}}'>
+	<view class="powdered  bg_f5 " wx:for='{{dataList}}' :key='index'>
+		<view class="flex powdered-box bg_fff">
+			<view class="flex flex_center" bindtap="selectItem" data-item="{{item}}">
+				<view class="select {{item.checked == true ? 'selected' : ''}} "></view>
+			</view>
+			<view class="p_20">
+				<image class="imgs" src="{{item.picUrl}}"></image>
+			</view>
+			<view class="fontSize_24 color_999 p_20 ">
+				<view class="fontSize_30 color_555 mt_10 esp">{{item.goodsName}}</view>
+				<view>{{item.txt}}</view>
+				<view class="mt_30"> <text class="color_f73 font_weight"><text class="fontSize_18">￥</text>{{item.price}}</text></view>
+			</view>
+
+			<view class="flex addBuss flex_center">
+				<view class="color_fff text_center   rece fontSize_24">
+					<!-- <image wx:if='{{shhowImg}}' class="add" src="../../static/images/less.png"></image> -->
+					<image class="add" src="../../static/images/lesss.png" catchtap="sub" data-item="{{item}}"></image>
+				</view>
+				<view class="color_212 fontSize_30 pd_10">{{item.number}}</view>
+				<view>
+					<image class="add" src="../../static/images/add.png" catchtap="add" data-item="{{item}}"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+
+</view>
+
+<view class="none_c" wx:if='{{dataList.length == 0}}'>暂无数据~</view>
+
+<!-- 底部结算栏 -->
+<view class="flex settlement flex_center" wx:if='{{dataList.length}}'>
+	<view class="fontSize_24 color_212 ml_30" bindtap="handleEdit">{{edit ? '完成' : '编辑'}}</view>
+	<view class="fontSize_24 color_212 flex flex_center" catchtap="selectAll">
+		<view class="select {{allCur == true ? 'selected' : ''}}"></view>
+		<view class="pd_20">全选</view>
+	</view>
+	<view class="fontSize_24 flex_1 text_right pd_20">
+		<view class="color_212 mb_10">合计: <text class="color_f73 font_weight"><text class="fontSize_18">￥</text>{{cartTotal.checkedGoodsAmount}}</text> </view>
+		<view class="color_f73">{{cartTotal.checkedGoodsDetail}}</view>
+	</view>
+	<view class="settlement-text color_fff fontSize_30" wx:if='{{!edit}}' catchtap="toFillOrder">去结算</view>
+	<view class="settlement-text color_fff fontSize_30" wx:if='{{edit}}' catchtap="dlt">删除</view>
+</view>

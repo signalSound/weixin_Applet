@@ -1,0 +1,79 @@
+<view class=' mb_30 pad_right mt_30'>
+	<view class=' flex flex_center pd_20'>
+		<view catchtap='toInvite' class="fontSize_24 invite">
+			<view>
+				<image class="img" src="../../static/images/invite.png"></image>
+			</view>
+			<text class="color_999 fontSize_22" >邀请码</text>
+		</view>
+		<view class="search bg_f5 flex_1 pd_20 flex flex_center" catchtap='toSearch'>
+			<icon type="search" size="18" color="#999" class='sousuo' />
+			<view class="fontSize_30 bg_f5 ml_10 color_999">请输入商品名称</view>
+		</view>
+	</view>
+</view>
+<view class="swipers">
+	<swiper autoplay="true" interval="3000" circular="true">
+		<swiper-item wx:for='{{bannerList}}' :key='index'>
+			<image class="h_100 w_100" src="{{item.url}}" />
+		</swiper-item>
+	</swiper>
+</view>
+<view class="bussBox flex fontSize_24 color_555 flex_wrap  mt_40 mb_20">
+	<view class="mb_20" catchtap='toClassification' wx:for='{{sortList}}' :key='index' data-id="{{item.id}}" data-name="{{item.name}}">
+		<image class="bImg" src="{{item.iconUrl}}"></image>
+		<view>{{item.name}}</view>
+	</view>
+</view>
+
+<view class="powdered pd_30 bg_f5">
+
+
+	<view wx:for='{{columnList}}' :key='index'>
+		<view class="activity color_555 fontSize_30 ">
+			<image src="{{item.litemallTopic.picUrl}}" class="column_pic"></image>
+			{{item.litemallTopic.title}}
+		</view>
+		<scroll-view scroll-x class='mb_20 scr'>
+			<view class='sv_item flex flex_column' wx:for="{{item.goodList}}" wx:for-item="item2" wx:key="{{item2.id}}" catchtap='toProductDetails' data-id="{{item2.id}}">
+				<view class='sv_pic flex flex_center justify_center relative'>
+					<image src="{{item2.picUrl}}" class='w_100 h_100' />
+				</view>
+				<view class="pd_10">
+					<view class="color_555 fontSize_24 mt_10 esp">
+						{{item2.name}}
+					</view>
+					<view class="color_f73 fontSize_22 mt_10 font_weight">￥{{item2.retailPrice}}</view>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+
+
+	<view class="flex powdered-box bg_fff mb_20" catchtap='toProductDetails' wx:for='{{hotList}}' :key='index' data-id="{{item.id}}">
+		<view class="p_20">
+			<image class="imgs" src="{{item.picUrl}}"></image>
+		</view>
+		<view class="fontSize_24 color_999 p_20 flex_1">
+			<view class="fontSize_30 color_555 mt_10 esp">{{item.name}}</view>
+			<view class="esp">{{item.brief}}</view>
+			<view class="mt_20">已售 {{item.soldNum}}件</view>
+			<view class="mt_10">
+				<text class="fontSize_24">会员价</text>
+				<text class="color_f73 font_weight">
+				  <text class="fontSize_20 ml_10">￥ </text>
+					<text class="fontSize_36">{{item.vipPrice}}</text>
+				</text>
+			</view>
+		</view>
+		<image class="add" src="../../static/images/add.png"></image>
+	</view>
+
+
+	<view class="box"></view>
+</view>
+
+<view class="cart" catchtap='toCartPage'>
+	<image src="../../static/images/cat.png"></image>
+	<view class="dot color_fff fontSize_12" wx:if='{{carNum}}'>{{carNum}}</view>
+</view>

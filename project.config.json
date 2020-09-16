@@ -1,0 +1,313 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"coverView": true,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"enhance": true,
+		"nodeModules": true,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"bundle": true,
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.11.1",
+	"appid": "wx60d0e83e8987e68a",
+	"projectname": "mini_my",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": " \"优心乐\",",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "分类详情",
+					"pathName": "pages/classification/classification",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "productDetails",
+					"pathName": "pages/productDetails/productDetails",
+					"query": "id= 1011004",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "s搜索商品",
+					"pathName": "search/seachShop/seachShop",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "邀请码",
+					"pathName": "invites/inviteCode/inviteCode",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "search/seachRecords/seachRecords",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "地址列表",
+					"pathName": "orderDetails/addressList/addressList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "添加地址",
+					"pathName": "orderDetails/addAddress/addAddress",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "设置",
+					"pathName": "my/mySet/mySet",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "邀请好友",
+					"pathName": "invites/inviteFriends/inviteFriends",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "邀请好友eCode",
+					"pathName": "invites/inviteMoney/inviteMoney",
+					"query": "",
+					"scene": 1001
+				},
+				{
+					"id": 11,
+					"name": "每日任务",
+					"pathName": "my/dailyTasks/dailyTasks",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 12,
+					"name": "乐豆提现",
+					"pathName": "wallets/myBean/myBean",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "乐豆明细",
+					"pathName": "wallets/beanDetails/beanDetails",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 14,
+					"name": "登录",
+					"pathName": "login/loginPage/loginPage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "修改登录密码",
+					"pathName": "login/modifyPass/modifyPass",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "修改手机",
+					"pathName": "login/modifyPhone/modifyPhone",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 17,
+					"name": "订单详情",
+					"pathName": "orderDetails/orderPaid/orderPaid",
+					"query": "orderId=68",
+					"scene": null
+				},
+				{
+					"id": 18,
+					"name": "填写订单",
+					"pathName": "orderDetails/fillOrder/fillOrder",
+					"query": "id=176",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的礼卷",
+					"pathName": "my/myVoucher/myVoucher",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "会员首页",
+					"pathName": "pages/vip/vip",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 21,
+					"name": "我的乐豆首页",
+					"pathName": "wallets/beanHome/beanHome",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 22,
+					"name": "我的",
+					"pathName": "pages/myInfo/myInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的主页",
+					"pathName": "pages/myInfo/myInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 24,
+					"name": "所有订单",
+					"pathName": "orderDetails/allOrders/allOrders",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "my/shoppingCart/shoppingCart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 26,
+					"name": "要请记录",
+					"pathName": "invites/inviteRecord/inviteRecord",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 27,
+					"name": "wode",
+					"pathName": "pages/myInfo/myInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "vip",
+					"pathName": "pages/vip/vip",
+					"query": "orderId=68",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "会员充值",
+					"pathName": "my/hycz/hycz",
+					"query": "orderId=68",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "申请退款",
+					"pathName": "orderDetails/tkyy/tkyy",
+					"query": "id=71",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "会员协议",
+					"pathName": "my/hyxy/hyxy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "用户协议",
+					"pathName": "my/fwxy/fwxy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的礼券",
+					"pathName": "my/myVoucher/myVoucher",
+					"query": "type=1",
+					"scene": null
+				},
+				{
+					"id": 34,
+					"name": "物流信息",
+					"pathName": "orderDetails/ckwl/ckwl",
+					"query": "id=137",
+					"scene": null
+				}
+			]
+		}
+	}
+}

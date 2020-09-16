@@ -1,0 +1,71 @@
+.inviteF {
+  height: 100Vh;
+  /* background: #eee; */
+  /* background-image:url('../../static/images/bg.png'); */
+}
+.invite-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+.invite_bg:nth-of-type(1){
+  box-sizing: border-box;
+  padding: 55rpx 0 8rpx 0;
+}
+.invite_text{
+  box-sizing: border-box;
+  margin: 30rpx 0;  
+}
+
+.invite_cen_box {
+  border-radius: 10rpx;
+  background: #fff;
+  padding-bottom: 20rpx;
+}
+.invite_cen_box:nth-of-type(1) {
+  padding-top: 30rpx;
+}
+.address_btn {
+  background-color: #F73D57;
+  /* height: 80rpx; */
+  /* line-height: 80rpx; */
+  text-align: center;
+  border-radius: 40rpx;
+  width: 80%;
+  margin: 40rpx auto 0;
+}
+.address_btn button {
+  font-size: 24rpx;
+  color:#fff;
+  text-align: center;
+}
+.invite-top {
+  margin-top: 290rpx;
+}
+.invite_core {
+    /* height: 60rpx;
+    width: 40rpx; */
+    /* background: #f5f5f5; */
+    border-radius: 4rpx;
+    margin: 20rpx auto;
+    display: inline-block;
+    color: #F73D57;
+}
+.invite-code-er {
+  width: 316rpx;
+  height: 316rpx;
+  padding: 5rpx;
+  margin-top: 20rpx;
+}
+.invite-code-num {
+  background: rgba(0, 0, 0, 0.1);
+  color:#fff;
+  width: 35rpx;
+  text-align: center;
+  line-height: 35rpx;
+  height: 35rpx;
+  margin-right: 10rpx;
+  border-radius: 50%;
+  box-sizing: content-box;
+}

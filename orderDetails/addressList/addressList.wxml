@@ -1,0 +1,22 @@
+<view class="address_bg">
+	<view wx:for="{{addressList}}" 
+	wx:for-item='item1' wx:key="{{item1.id}}" data-data='{{item1}}'>
+		<view class="address-box pd_20"
+		data-data='{{item1}}'
+		bindtap="{{type == 1 ? 'selectAddress' : ''}}">
+			<view class="flex justify_sb color_333 fontSize_30 address">
+				<view class="">{{item1.name}}</view>
+				<view>{{item1.tel}}</view>
+			</view>
+			<view class="color_999 fontSize_24 address_text">{{item1.province}}{{item1.city}}{{item1.county}}{{item1.addressDetail}}</view>
+		</view>
+		<view class="setAddress fontSize_24 flex justify_sb flex_center pd_20">
+			<view class="color_f73 flex" catchtap="setAddress" data-isDefault='{{item1}}'>
+				<view class="select {{item1.isDefault?'selected': '' }}" ></view> 默认地址
+			</view>
+			<view class="color_555 "><text class="pd_30"  catchtap='editorBtn' data-editor="{{item1}}" data-type='1'>编辑</text > <text catchtap="delectBtn"  data-delect="{{item1}}">删除</text> </view>
+		</view>
+	</view>
+
+	<view class="address_btn color_fff fontSize_30" catchtap='addAdress' data-type="0">添加地址</view>
+</view>

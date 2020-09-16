@@ -1,0 +1,76 @@
+<view class="daily-tasks">
+	<image class="bean-bg" src="../../static/images/bean.png"></image>
+	<view class="daily-tasks-infos">
+		<view class="daily-tasks-infos-height flex  flex_center">
+			<view class="daily-tasks-actors">
+				<open-data type="userAvatarUrl"></open-data>
+			</view>
+			<view class="fontSize_30 color_fff">
+				<view>
+					<open-data type="userNickName"></open-data>
+					<image class="daily-tasks-infos-vip"></image>
+				</view>
+
+				<view class="fontSize_24 " wx:if='{{beanLists.userLevel}}'>
+					VIP有效期 {{beanLists.expireTime}}
+				</view>
+				<view class="fontSize_24 " wx:else>
+					普通用户
+				</view>
+			</view>
+		</view>
+		<view class="sign-box">
+			<view class="flex justify_sb color_333 mb_70">
+				<view class="fontSize_24">提现乐豆 <text class="fontSize_20 color_bbb">（当前余额{{beanLists.legume || 0}}豆）</text></view>
+				<view class=" fontSize_24" catchtap='toMybeans'>比例1：100</view>
+			</view>
+			<view class="flex flex_center bean-num">
+
+				<image class="bean-img" src="../../static/images/55.png"></image>
+				<input class="fontSize_60  font_weight color_7d3 flex_1 pd_20"
+				value='{{params.outLegume}}' bindinput='handleNum' type="number">{{beanLists.legume || 0}}</input>
+				<view class="fontSize_60 color_999">
+					<text>{{params.outLegume/100}}</text> <text class="fontSize_36 ml_10 yuan">元</text>
+				</view>
+			</view>
+			<view class="fontSize_18 color_bbb mt_20">1W乐豆起提 法定节假日无法提现 <text class="color_f73">提现手续费  普通用户20%，会员5% </text> </view>
+			<view class="address_btn color_fff fontSize_30" catchtap='showTX'>确认提现</view>
+		</view>
+	</view>
+	<view class="pd_30 daily-tasks-every-bg">
+		<view class="daily-tasks-every">
+			<view class=" color_333 fontSize_24 withdrawal">提现记录</view>
+			<view class="flex records justify_sb fontSize_24 color_666" wx:for='{{beanLists.order}}' :key='index'>
+				<view class="">{{item.addTime}}</view>
+				<view class="color_f73">{{item.outLegume}} </view>
+				<view>{{item.outStatus === 0? '待审核':item.outStatus === 1?'已通过':item.outStatus === 2?'已到账':'驳回'}}</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="mask" wx:if='{{isShow}}' bindtap="hidden"></view>
+<view class="tc_box" wx:if='{{isShow}}'>
+	<view class="tc_tit flex mb_50">
+		<view class="flex_1 fontSize_34 color_333 text_center font_weight">支付宝信息填写</view>
+		<view class="p_20" bindtap="hidden">
+			<view class='iconfont icon-dlt color_999 fontSize_38 tc_dlt'></view>
+		</view>
+	</view>
+	<view class="flex flex_center tc_ipt_b0x fontSize_30 color_333 mb_40 pd_40">
+		<view class="w_120">姓名</view>
+		<input class="flex_1" placeholder="请输入真实姓名" value='{{params.name}}' bindinput='handleName'></input>
+	</view>
+	<view class="flex flex_center tc_ipt_b0x fontSize_30 color_333 mb_40 pd_40">
+		<view class="w_120">账号</view>
+		<input class="flex_1" placeholder="请输入支付宝账号" value='{{params.outNumber}}' bindinput='handleAccount'></input>
+	</view>
+	<view class="flex flex_center tc_ipt_b0x fontSize_30 color_333 mb_20 pd_40">
+		<view class="w_120">手机号</view>
+		<input class="flex_1" placeholder="请输入手机号" value='{{params.phone}}' bindinput='handleTel'></input>
+	</view>
+	<view class="fontSize_22 color_999 ml_40 mb_130">若信息填写错误请及时联系客服</view>
+	<view class="tc_btn" bindtap="save">
+		确认提交
+	</view>
+</view>

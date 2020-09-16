@@ -1,0 +1,128 @@
+/* private */
+
+.bottom_tips {
+  padding: 40rpx 0 60rpx;
+}
+
+/* 弹窗动画 */
+
+.dialogEnter {
+  animation: sEnter 0.4s;
+  animation-fill-mode: forwards;
+}
+
+.dialogOut {
+  animation: sOut 0.4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes sEnter {
+  0% {
+    transform: translateY(1334rpx);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes sOut {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(1334rpx);
+  }
+}
+
+/* 弹窗动画 */
+
+.bg_ccc{
+  background: #ccc;
+}
+.bg_red{
+  background: red
+}
+
+.color_price {
+  color: #e23737;
+}
+.color_ab373a{
+  color: #ab373a;
+}
+.color_e2797d{
+  color: #e2797d;
+}
+.color_d87578{
+  color: #d87578;
+}
+.color_666{
+  color: #666;
+}
+.color_acacac{
+  color: #acacac;
+}
+.color_3abb07{
+  color: #3abb07;
+}
+.color_c4c4c4{
+  color: #c4c4c4;
+}
+.color_ffee9e{
+  color: #ffee9e;
+}
+.color_bbb{
+  color: #bbb;
+}
+.color_f73d57{
+  color: #F73D57;
+}
+
+.color_555{
+  color: #555555;
+}
+.color_000{
+  color: #000 !important;
+}
+.bg_AB373A{
+  background: #AB373A;
+}
+.bg_c2c2c2{
+  background: #c2c2c2;
+}
+.bg_3abb07{
+  background: #3abb07;
+}
+.bg_F73D57{
+  background: #F73D57 !important;
+}
+.color_21212B{
+  color: #21212B;
+}
+.color_F73D57{
+  color: #F73D57;
+}
+
+
+.xsjx{
+  width: 18rpx;
+  height: 11rpx;
+}
+.save_btn{
+  width: 580rpx;
+	height: 88rpx;
+	background-color: #ab373a;
+  border-radius: 44rpx;
+  position: fixed;
+  left: 85rpx;
+  bottom: 60rpx;
+  font-size: 36;
+  color: #fff;
+  line-height: 88rpx;
+  text-align: center;
+}
+.tel{
+  width: 30rpx;
+	height: 30rpx;
+}

@@ -1,0 +1,36 @@
+<view class="set_bg ">
+	<view class="cell flex flex_center justify_sb pd_30" catchtap='toPhone'>
+		<view class="color_212 fontSize_30">修改手机号</view>
+		<view>
+			<image class="img" src="../../static/images/arrow.png"></image>
+		</view>
+	</view>
+	<view class="cell flex flex_center justify_sb pd_30" catchtap='toPassword'>
+		<view class="color_212 fontSize_30">修改登录密码</view>
+		<view>
+			<image class="img" src="../../static/images/arrow.png"></image>
+
+		</view>
+	</view>
+	<view class="cell flex flex_center justify_sb pd_30">
+		<view class="color_212 fontSize_30">关于优心贝</view>
+		<view>
+			<image class="img" src="../../static/images/arrow.png"></image>
+
+		</view>
+	</view>
+	<view class="cell flex flex_center justify_sb pd_30">
+		<view class="color_212 fontSize_30">资质证照</view>
+		<view>
+			<image class="img" src="../../static/images/arrow.png"></image>
+
+		</view>
+	</view>
+  <button class="cell flex flex_center justify_sb pd_30 tel_btn"
+  open-type="getPhoneNumber"  bindgetphonenumber="getPhoneNumber">
+		<view class="color_212 fontSize_30">绑定手机号</view>
+		<view>
+			<image class="img" src="../../static/images/arrow.png"></image>
+		</view>
+	</button>
+</view>

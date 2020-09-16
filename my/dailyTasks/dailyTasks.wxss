@@ -1,0 +1,140 @@
+page {
+  background-color: #f5f5f5;
+}
+.daily-tasks-infos {
+  height: 300rpx;
+  background: linear-gradient(to right,#F73D3D,#F76568);
+  padding-left: 30rpx;
+}
+.daily-tasks-actors {
+  margin-right: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+  /* background: #eee; */
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+.daily-tasks-infos-height {
+  padding-top: 50rpx;
+  /* box-sizing: border-box; */
+  height: 150rpx;
+}
+.daily-tasks-infos-mon {
+  height: 60rpx;
+  display: inline-block;
+  border-bottom-left-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+  line-height: 60rpx;
+  text-align: center;
+  margin-bottom: 40rpx;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0 15rpx;
+}
+.daily-tasks-infos-vip {
+  width: 30rpx;
+  height: 27rpx;
+}
+.daily-tasks-infos-pee {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+}
+.daily-tasks-infos-yuan {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+  box-sizing: border-box;
+}
+.sign-box {
+  margin-right: 30rpx;
+  padding: 35rpx 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+.nums {
+  position: absolute;
+  color: #EFBD6C;
+  right: 30rpx;
+}
+
+.daily-tasks-sign {
+    width: 70rpx;
+    height: 90rpx;
+    background: #F8F5ED;
+    border-radius: 10rpx;
+    text-align: center;
+    margin-top: 40rpx;
+}
+.daily-tasks-sign +.daily-tasks-sign{
+  margin-left: 25rpx;
+
+}
+.bg {
+  background-color: #F5F5F5;
+}
+.daily-tasks-sign-img {
+  width: 30rpx;
+  height: 30rpx;
+}
+.address_btn {
+  background-color: #F73D57;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  width: 80%;
+  margin: 40rpx auto 0;
+}
+.daily-tasks-every {
+  margin-top: 260rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  padding: 25rpx 20rpx;
+  position: relative;
+}
+.daily-tasks-everyone::after {
+  content: '';
+  display: block;
+  width: 40rpx;
+  height: 4rpx;
+  border-radius: 2rpx;
+  background-color: #F73D57;
+  margin-top: 10rpx
+}
+
+.daily-tasks-every-info {
+  position: relative;
+  border-bottom: 1px solid #f5f5f5;
+  padding-bottom: 20rpx;
+}
+.daily-tasks-every-info:nth-last-of-type(1) {
+  border-bottom: 0;
+}
+.daily-tasks-user {
+  padding-right: 20rpx;
+}
+.user-pee {
+  width: 24rpx;
+  height: 24rpx;
+}
+.mar_right {
+  margin-right: 10rpx;
+}
+.dails-tasks-btn {
+  width: 120rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+  background-color: #F73D57;
+  text-align: center;
+  line-height: 50rpx;
+  position: absolute;
+  right: 20rpx;
+  bottom: 30rpx;
+}
+.vipRed {
+  width: 30rpx;
+  height: 27rpx;
+}

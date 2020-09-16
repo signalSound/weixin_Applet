@@ -1,0 +1,13 @@
+<view >
+  <view class="flex b-header justify_sb fontSize_30 color_333">
+      <view class="color_f73">时间</view>
+      <view class="text_center">类型</view>
+      <view class="text_right">手机号</view>
+  </view>
+
+  <view class="flex b-header justify_sb fontSize_24 color_666" wx:for='{{inviteRecord.list}}' :key='index'>
+      <view class="color_999 fontSize_20">{{item.time}}</view>
+      <view class="text_center">{{item.userLevel === 0?'普通用户': '尊贵会员'}}</view>
+      <view class="color_f73 text_right">{{item.mobile}}</view>
+  </view>
+</view>

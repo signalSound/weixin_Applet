@@ -1,0 +1,22 @@
+<view class="inviteF">
+  <view >
+    <view class="invite_bg text_center">
+      <view class="fontSize_48 color_fff font_weight "> 邀请好友立赚5元</view>
+      <view class="fontSize_24 color_fff invite_text">多邀多得 上不封顶</view>
+      <view class="pd_30">
+        <view class="invite_cen_box">
+          <view class="color_333 fontSize_30 ">邀新奖励</view>
+          <view class="color_999 fontSize_24 mt_20">每邀请1位用户成为会员，你可得</view>
+          <view class="fontSize_60 color_f73 font_weight mt_30">5元</view>
+          <view class="address_btn fontSize_30 color_fff ">立即邀请赚奖励</view>
+        </view>
+      </view>
+    </view>
+  </view>
+    <view class="text_center invite-top fontSize_30 color_333">
+        <view>邀新攻略</view>
+        <view class="mt_80"> 好友打开链接注册得5元劵 </view>
+        <view class="mt_20"> 好友成为会员得5元 </view>
+      </view>
+</view>
+

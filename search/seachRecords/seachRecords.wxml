@@ -1,0 +1,62 @@
+<view class="fixed_box">
+	<view class=' flex flex_center pd_30'>
+		<view class="search flex_1">
+			<input class="fontSize_30 bg_f5 inputs" placeholder="请输入商品名称" value="{{params.keyword}}" bindconfirm="handleSearch" bindinput='handleVal'></input>
+			<icon type="search" size="18" color="#999" class='sousuo' />
+		</view>
+		<text class="color_555 fontSize_30" bindtap="handleSearch">搜索</text>
+	</view>
+
+	<view class="flex nums fontSize_24 color_bbb">
+		<view class="nums_item pd_20 {{params.sort == 'name' ? 'color_f73' : ''}}" data-item="name" catchtap="handleSort">综合</view>
+		<!-- <view class="flex flex_center justify_center nums_item">
+			<view class="">销量</view>
+			<view class="">
+				<view class='iconfont icon-ssjx fontSize_14 color_999 mb_10 sjx {{params.sort == 1 ? "color_f73d57" : ""}}'></view>
+				<view class='iconfont icon-sjx fontSize_14 color_999 sjx {{params.sort == 0 ? "color_f73d57" : ""}}'></view>
+			</view>
+		</view> -->
+		<view class="flex flex_center justify_center nums_item">
+			<view class="{{params.sort == 'retail_price' ? 'color_f73' : ''}} ml_20" data-item="retail_price" catchtap="handleSort">价格</view>
+			<view catchtap="handleOrder" class="sjx_box pd_20">
+				<view class='iconfont icon-ssjx fontSize_14 color_999 mb_10 sjx {{params.order == "desc" ? "color_f73d57" : ""}}'></view>
+				<view class='iconfont icon-sjx fontSize_14 color_999 sjx {{params.order == "asc" ? "color_f73d57" : ""}}'></view>
+			</view>
+		</view>
+	</view>
+
+	<scroll-view scroll-x class='scr'>
+		<view class=" nums fontSize_24 color_bbb" wx:if='{{filterCategoryList.length}}'>
+			<view class="nums_item1 {{item.id == params.categoryId ? 'color_f73' : ''}}" wx:for='{{filterCategoryList}}' :key='index' data-id="{{item.id}}" catchtap="getSort">{{item.name}}</view>
+		</view>
+	</scroll-view>
+
+</view>
+<view class="powdered p_30 bg_f5  {{filterCategoryList.length ? '' : 'tsub'}}" wx:if="{{dataList.length}}">
+	<view class="flex powdered-box bg_fff mb_20" wx:for='{{dataList}}' :key='index' catchtap="toProductDetails" data-id="{{item.id}}">
+		<view class="p_20">
+			<image class="imgs" src="{{item.picUrl}}"></image>
+		</view>
+		<view class="fontSize_24 color_999 p_20 flex_1">
+			<view class="fontSize_30 color_555 mt_10 esp">{{item.name}}</view>
+			<view class="esp">{{item.brief}}</view>
+			<view class="mt_20">已售 {{item.soldNum}}件</view>
+			<view class="mt_10">
+				<text class="fontSize_24">会员价</text>
+				<text class="color_f73 font_weight">
+					<text class="fontSize_20 ml_20">￥ </text>
+					<text class="fontSize_36">{{item.vipPrice}}</text>
+				</text>
+			</view>
+		</view>
+
+		<image class="add" src="../../static/images/add.png"></image>
+	</view>
+</view>
+
+<view class="none_c" wx:if="{{dataList.length === 0}}">暂无数据~</view>
+
+<view class="cart" catchtap='toCartPage'>
+	<image src="../../static/images/cat.png"></image>
+	<view class="dot color_fff fontSize_12" wx:if='{{carNum}}'>{{carNum}}</view>
+</view>

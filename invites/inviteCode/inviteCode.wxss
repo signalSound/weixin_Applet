@@ -1,0 +1,19 @@
+.invite {
+  margin-top:150rpx;
+  margin-bottom:118rpx;
+}
+.btn {
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #ddd;
+  border-radius: 44rpx;
+  margin-top: 40rpx;
+}
+.btns {
+  background-color: #F73D57;
+}
+.inputs {
+  border-bottom: 1px solid #bbb;
+  margin-bottom: 140rpx;
+}
+

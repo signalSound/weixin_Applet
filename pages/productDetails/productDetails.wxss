@@ -1,0 +1,283 @@
+/**基础风格样式**/
+@import '/utils/towxml/style/main.wxss';
+
+/**主题配色（浅色样式）**/
+@import '/utils/towxml/style/theme/light.wxss';
+
+/**主题配色（深色样式）**/
+@import '/utils/towxml/style/theme/dark.wxss';
+.h2w{
+  line-height: 1;
+}
+/* .h2w__p {
+  margin: 0;
+  line-height: 0.7;
+} */
+/* .h2w image{
+  margin: 0 auto;
+} */
+.container {
+  padding-top: 20rpx;
+}
+.text_item {
+  text-indent: 2em;
+}
+
+.img_item + .text_item {
+  margin-top: 20rpx;
+}
+
+.text_item + .img_item {
+  margin-top: 20rpx;
+}
+
+.text_item + .text_item {
+  margin-top: 20rpx;
+}
+
+.img_item + .img_item {
+  margin-top: 20rpx;
+}
+
+/* 内容 */
+
+.h2w__main {
+  /* padding: 50rpx 30rpx; */
+  padding-top: 0;
+  margin: 0;
+}
+
+.content_txt {
+  line-height: 50rpx;
+}
+
+.content + .content {
+  margin-top: 20rpx;
+}
+
+page{
+  padding-bottom: 120rpx;
+}
+.swiper {
+  height: 710rpx;
+}
+.swiper swiper {
+  height: 710rpx
+}
+.imgs {
+  height: 710rpx;
+  width: 100%;
+}
+.prices {
+  position: relative;
+  padding: 0 20rpx;
+  height: 100rpx;
+}
+.share {
+  width: 30rpx;
+  height: 27rpx;
+  vertical-align: middle;
+}
+.pricesBg {
+  height: 100rpx;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -999;
+}
+
+.vip {
+  display: inline-block;
+  height: 50rpx;
+  width: 180rpx;
+  background-color: #fff;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 25rpx;
+  margin-left: 25rpx;
+}
+
+.vip1 {
+  height: 29rpx;
+  width: 39rpx;
+  position: absolute;
+  left: 15px;
+  margin-top: 6rpx;
+}
+.vipReduce {
+  background-color: #21212B;
+  height: 80rpx;
+  border-radius: 10rpx;
+  padding-left: 70rpx;
+  box-sizing: border-box;
+}
+.reduceMon {
+  height: 100%;
+  background-color: #FFCD77;
+  width: 180rpx;
+}
+.cells {
+  border-bottom: 1px solid #f5f5f5;
+  padding: 10rpx 0;
+}
+.borders {
+  background-color: #F5F5F5;
+  height: 20rpx;
+}
+.shopCart {
+  height: 120rpx;
+  background-color: #eee;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  line-height: 1;
+}
+.btna button{
+  width: auto !important;
+  padding: 0;
+  font-weight: 500;
+  line-height: 1;
+  font-size: 24rpx;
+  color: #999;
+}
+.shopCart button{
+  width: auto !important;
+  padding: 0;
+  font-weight: 500;
+  line-height: 1;
+}
+image{
+  margin: 0 auto;
+}
+.addCart {
+  width: 219rpx;
+  height: 100%;
+  background-color: #21212B;
+}
+.bug {
+  width: 219rpx;
+  height: 100%;
+  background-color: #F73D57;
+}
+.phone {
+  width: 100rpx;
+  height: 100%;
+}
+.mask {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  height: 100%;
+}
+.popup-select { 
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 99999;
+  background-color: #fff;
+}
+
+.popup-select-img {
+  width: 140rpx;
+  height: 140rpx;
+  background: #eee;
+  margin-right: 30rpx;
+  border-radius: 5rpx;
+} 
+.popup-select-box {
+  padding: 30rpx;
+}
+.age-select {
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #F5F5F5;
+}
+.age-select view{
+  padding: 0 15rpx;
+  height: 50rpx;
+  border-radius: 10rpx;
+  line-height: 50rpx;
+  background-color: #F5F5F5;
+  text-align: center;
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.age-select view:nth-last-of-type(1){
+  margin-right: 0;
+}
+.selected {
+  background-color: #F5F5F5;
+  color: #bbb;
+}
+
+.comfire-btn {
+  height: 120rpx;
+  background-color: #F73D57;
+  line-height: 99rpx;
+  text-align: center;
+  margin-top: 150rpx;
+}
+.carts {
+  height: 100%;
+}
+.cart {
+  position: relative;
+  /* height: 100%; */
+}
+
+.cart .dot {
+  background: #F73D57;
+  border-radius: 50%;
+  line-height: 25rpx;
+  position: absolute;
+  right: -10rpx;
+  top: -5rpx;
+  padding: 3rpx 8rpx;
+  text-align: center;
+}
+.add {
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  /* background-color: #F73D57; */
+  border-radius: 50%;
+}
+
+.good_title {
+  height: 99rpx;
+  line-height: 99rpx;
+  border-bottom: 1px solid #f5f5f5;
+  position: relative;
+}
+.close{
+  position: absolute;
+  right: 40rpx;
+  top: 5rpx;
+}
+.good_title  image {
+  position: absolute;
+  width: 28rpx;
+  height: 28rpx;
+  right: 30rpx;
+  top: 15rpx;
+}
+.buy-num {
+  padding: 26rpx 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+.buy_num_item {
+  display: inline-block;
+  width: 150rpx;
+}
+.addBuss{
+  line-height: 1;
+}
+.w160{
+  width: 160rpx;
+}

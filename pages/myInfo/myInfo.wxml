@@ -1,0 +1,143 @@
+<view class="daily-tasks">
+	<image class="bean-bg" src="../../static/images/my.png"></image>
+	<view class="daily-tasks-infos">
+		<view class="flex justify_sb my-invite-code color_fff fontSize_24 flex_center">
+			<view></view>
+			<view class="flex ">
+				<view class="invite-code" catchtap='toInvitePage'>
+					<image class="my-invite-img" src="../../static/images/code.png"></image> 邀请码
+				</view>
+				<view class="flex flex_center" catchtap='toSetPage'>
+					<image class="my-set-img" src="../../static/images/set.png"></image> <text>设置</text>
+				</view>
+			</view>
+		</view>
+		<view catchtap='toSign' class="daily-tasks-infos-height flex justify_sb  flex_center">
+			<view>
+				<view class="daily-tasks-actors"> <open-data type="userAvatarUrl"></open-data></view>
+				<!-- <image class="daily-tasks-actors" src="../../static/images/actor.png"></image> -->
+			</view>
+			<view class="fontSize_30 color_fff">
+				<view><open-data type="userNickName"></open-data> <image wx:if='{{vipLevel.userLevel}}' class="daily-tasks-infos-vip" src="../../static/images/myVip.png"></image>
+				</view>
+				<view class="fontSize_24 flex flex_center" wx:if='{{vipLevel.userLevel}}'>
+					<view>{{vipLevel.userLevel ? '尊贵会员' : '普通用户'}}</view>
+					<!-- <button class="color_fff tel_btn" open-type="getPhoneNumber"  bindgetphonenumber="getPhoneNumber">一件绑定手机</button> -->
+				</view>
+			</view>
+			<view class="flex_1"></view>
+			<view class="sign-btn fontSize_24 color_212 mt_40" catchtap="signBtn">签到赚钱</view>
+
+		</view>
+		<scroll-view scroll-x class='mb_10 scr' >
+			<view class='sv_item flex flex_column' wx:for="{{arr}}" wx:for-item="item2" wx:key="{{item2.id}}"  data-data='{{item2}}' catchtap='toProductDetails'>
+				<view class="p_10 sv_pic ">
+					<view class="color_212 fontSize_30 mt_10 font_weight esp">
+						{{item2.column_goods_list}}
+					</view>
+					<view class="color_999 fontSize_22 ">{{item2.text}}</view>
+				</view>
+			</view>
+		</scroll-view>
+		<view class="sign-box">
+			<view class="flex bean-num justify_sb flex_center ">
+				<view>
+					<image class="bean-img" src="../../static/images/icon9.png"></image>
+				</view>
+				<view class="flex_1">
+					<view class="color_212 fontSize_26 font_weight">邀请好友成为会员</view>
+					<view class="color_555 fontSize_24">好友得5元，你得5元</view>
+				</view>
+				<view class="bean-btn fontSize_24 color_fff mb_10" catchtap='toInvites'>去邀请</view>
+			</view>
+
+		</view>
+	</view>
+	<view class="pd_30">
+		<view class='my-order-tab' >
+			<view class="my-look-order flex justify_sb">
+				<view class="color_212 fontSize_30">我的订单</view>
+				<view class="color_999 fontSize_24" catchtap='toOrders' data-index='0'>查看全部订单 <image class="order-tab-arrow" src="../../static/images/arrow.png"></image>
+				</view>
+			</view>
+			<view class="my-order-status mt_30 color_999 fontSize_24 flex flex_center">
+				<view catchtap='toOrders' data-index='1'>
+					<image class="my-order-status-img img_size" src="../../static/images/icon1.png"></image>
+					<view>待付款</view>
+				</view>
+				<view catchtap='toOrders' data-index='2'>
+					<image class="my-order-status-img img_size1" src="../../static/images/icon2.png"></image>
+					<view>待发货</view>
+				</view>
+				<view catchtap='toOrders' data-index='3'>
+					<image class="my-order-status-img img_size2" src="../../static/images/icon3.png"></image>
+					<view>待收货</view>
+				</view>
+				<view catchtap='toOrders' data-index='4'>
+					<image class="my-order-status-img img_size3" src="../../static/images/icon4.png"></image>
+					<view>退换货</view>
+				</view>
+			</view>
+		</view>
+
+		<view class="my-code-fill pd_20 mt_20 flex justify_sb flex_center">
+			<view class="color_212 fontSize_24">
+				<image class="code-fill-icon" src="../../static/images/fill.png"></image> 填写好友邀请码立得5元会员优惠券哦
+			</view>
+			<view>
+				<view class="bean-btn fontSize_24 color_fff " catchtap="fillInBtn">去填写</view>
+			</view>
+		</view>
+
+		<view class='my-order-tab my-order-tab-m mt_20'>
+			<view class="my-look-order flex justify_sb">
+				<view class="color_212 fontSize_30">我的工具</view>
+				<view class="color_999 fontSize_24">
+				</view>
+			</view>
+			<view class="my-order-status my-order-tool color_999 fontSize_24 ">
+				<view class="my-order-status-t" catchtap='toMyVoucher'>
+					<image class="my-order-status-img0" src="../../static/images/icon5.png"></image>
+					<view>我的礼券</view>
+				</view>
+				<view class="my-order-status-t" catchtap='toAddressList'>
+					<image class="my-order-status-img1 " src="../../static/images/icon6.png"></image>
+					<view>收货地址</view>
+				</view>
+				<view class="my-order-status-t" catchtap="vipPrivilege">
+					<image class="my-order-status-img2" src="../../static/images/22.png"></image>
+					<view catchtap=''>会员特权</view>
+				</view>
+				<view class="my-order-status-t" catchtap='toDailyTasks'>
+					<image class="my-order-status-img3" src="../../static/images/icon8.png"></image>
+					<view>每日任务</view>
+				</view>
+				<view class="my-order-status-t" catchtap='toInvite'>
+					<image class="my-order-status-img4" src="../../static/images/icon9.png"></image>
+					<view>邀请有奖</view>
+				</view>
+
+				<view class="my-order-status-t">
+				
+					<!-- <view> -->
+						<button class="btnMobile" open-type="contact">	<image class="my-order-status-img5" src="../../static/images/icon10.png"></image>
+						<view>平台客服</view>
+					</button>
+					<!-- </view> -->
+				</view>
+				<view class="my-order-status-t" catchtap='inviteRecord'>
+					<image class="my-order-status-img4" src="../../static/images/33.png"></image>
+					<view>邀请记录</view>
+				</view>
+
+				
+			</view>
+
+		</view>
+
+		<view class="tcLogin" bindtap="tcLogin">退出登录</view>
+
+		<view class="box"></view>
+	</view>
+
+</view>

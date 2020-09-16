@@ -1,0 +1,109 @@
+<view class="daily-tasks">
+	<view class="daily-tasks-infos">
+		<view class="daily-tasks-infos-height flex  flex_center">
+			<view>
+				<view class="daily-tasks-actors">
+					<open-data type="userAvatarUrl"></open-data>
+				</view>
+			</view>
+			<view class="fontSize_30 color_fff">
+				<view>
+					<open-data type="userNickName"></open-data>
+
+					<image class="daily-tasks-infos-vip"></image>
+				</view>
+				<view class="fontSize_24 ">
+					<image class="daily-tasks-infos-pee" src="../../static/images/111.png"></image>乐豆 {{couponList.legume}}
+				</view>
+			</view>
+			<view class="flex_1 text_right">
+				<view class="fontSize_24 color_fff text_right daily-tasks-infos-mon">
+					<image class="daily-tasks-infos-yuan" src="../../static/images/111.png"></image>累计收入{{couponList.countPrice || 0}} 元
+				</view>
+			</view>
+		</view>
+		<view class="sign-box">
+			<view class="flex justify_sb">
+				<view class="color_333 fontSize_24">已连续签到 <text class="color_f73">{{couponList.dateNum}}</text> 天</view>
+				<view class="color_f73 fontSize_24" catchtap="exchangeBtn">去提现</view>
+			</view>
+			<view class="flex flex_wrap">
+				<view class="daily-tasks-sign {{item <= couponList.list.length?'bg':''}}" wx:for="{{arr}}">
+					<view>
+						<image wx:if='{{item <= couponList.list.length}}' class="daily-tasks-sign-img " src="../../static/images/88.png"></image>
+						<image wx:else class="daily-tasks-sign-img " src="../../static/images/111.png"></image>
+						<!-- <image class="daily-tasks-sign-img" src="../../static/images/乐豆-紫色.png"></image> -->
+					</view>
+					<view class="fontSize_24 {{item <= couponList.list.length?'color_555':'color_a77'}} ">+20 </view>
+				</view>
+			</view>
+			<view class="address_btn color_fff fontSize_30" catchtap="signBtn">签到赚钱</view>
+		</view>
+	</view>
+	<view class="pd_30 mb_60">
+		<view class="daily-tasks-every">
+			<view class="daily-tasks-everyone color_333 fontSize_36">每日任务</view>
+			<view class="daily-tasks-every-info color_333 fontSize_24" wx:for='{{taskList}}' :key='index'>
+				<view class="nums">剩余{{item.upNum == null ? '无限' : item.remNum + ''}}次</view>
+				<view class="fontSize_26 mt_30">{{item.name}}
+					<!-- <text class="color_f73">{{item.upNum}}/{{item.reachNum}} 次</text> -->
+					<image wx:if='{{false}}' class="vipRed" src="../../static/images/red.png"></image>
+				</view>
+				<view class="color_999 fontSize_24 mt_10">{{item.details}}</view>
+				<view class="fontSize_24 mt_30 flex">
+					<view class="daily-tasks-user" wx:if='{{item.status !=5}}'>普通用户 <image class="user-pee mar_right" src="../../static/images/111.png"></image> <text class="color_efb">{{item.legume}}</text></view>
+					<view wx:if='{{item.status !=5}}'>VIP会员 <image class="user-pee" src="../../static/images/111.png"></image><text class="color_efb"> {{item.vipLegume}}</text></view>
+
+					<view wx:if='{{false}}'>所有用户 <image class="user-pee" src="../../static/images/111.png"></image><text class="color_efb"> {{item.legume}}</text></view>
+					<view wx:if='{{item.status == 5}}'>原价-会员价=所得佣金（最高40%）</view>
+
+				</view>
+				<view class="dails-tasks-btn color_fff fontSize_24" catchtap="taskBtn" data-status="{{item.status}}">{{item.statu}}</view>
+			</view>
+
+			<!-- <view class="daily-tasks-every-info color_333 fontSize_24">
+				<view class="fontSize_26 mt_30">邀请新人赚钱</view>
+				<view class="color_999 mt_10">邀请1位用户注册可获得丰富奖励</view>
+				<view class="fontSize_24 mt_30 flex">
+					<view class="daily-tasks-user">普通用户 <image class="user-pee" src="../../static/images/111.png"></image> <text class="color_efb">10</text></view>
+					<view>VIP会员 <image class="user-pee" src="../../static/images/111.png"></image><text class="color_efb"> 	 20</text></view>
+				</view>
+				<view class="dails-tasks-btn color_fff fontSize_24" catchtap="shareBtn">去邀请</view>
+			</view> -->
+			<!-- <view class="daily-tasks-every-info color_333 fontSize_24">
+				<view class="fontSize_26 mt_30">好友开通会员赚钱</view>
+				<view class="color_999 mt_10">邀请的好友开通会员可获得丰富奖励</view>
+				<view class="fontSize_24 mt_30 flex">
+					<view class="daily-tasks-user">普通用户 <image class="user-pee" src="../../static/images/111.png"></image> <text class="color_efb">10</text></view>
+					<view>VIP会员 <image class="user-pee" src="../../static/images/111.png"></image><text class="color_efb"> 	 20/月</text></view>
+				</view>
+				<view class="dails-tasks-btn color_fff fontSize_24" catchtap="shareBtn">去邀请</view>
+			</view> -->
+
+			<!-- <view class="daily-tasks-every-info color_333 fontSize_24">
+				<view class="fontSize_26 mt_30">会员分享商品获得返利</view>
+				<view class="color_999 mt_10">会员分享商品，新用户购买可获得丰富奖励</view>
+				<view class="fontSize_24 mt_30 flex">
+					<view class="daily-tasks-user">普通用户 <image class="user-pee" src="../../static/images/111.png"></image> <text class="color_efb">10/月</text></view>
+					<view>VIP会员 <image class="user-pee" src="../../static/images/111.png"></image><text class="color_efb"> 	 20/月</text></view>
+				</view>
+				<view class="dails-tasks-btn color_fff fontSize_24" catchtap="shareBtn">去分享</view>
+			</view> -->
+
+			<!-- <view class="daily-tasks-every-info color_333 fontSize_24">
+				<view class="fontSize_26 mt_30">每日签到领不停</view>
+				<view class="color_999 mt_10">每日登陆并签到可领取大量乐豆福利</view>
+				<view class="fontSize_24 mt_30 flex">
+					<view class="daily-tasks-user">普通用户 <image class="user-pee" src="../../static/images/111.png"></image> <text class="color_efb">10/月</text></view>
+					<view>VIP会员 <image class="user-pee" src="../../static/images/111.png"></image><text class="color_efb"> 	20/月</text></view>
+				</view>
+				<view class="dails-tasks-btn color_fff fontSize_24">去签到</view>
+			</view> -->
+
+
+		</view>
+
+
+	</view>
+
+</view>

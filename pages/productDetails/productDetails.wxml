@@ -1,0 +1,168 @@
+<view class="swiper">
+	<swiper autoplay="true" interval="3000" circular="true">
+		<swiper-item wx:for='{{data.info.gallery}}'>
+			<image class="imgs" src="{{item}}" />
+		</swiper-item>
+	</swiper>
+</view>
+<view class="flex prices justify_sb flex_center">
+	<view>
+		<view class="fontSize_24 color_fff">当前价</view>
+		<view class="fontSize_40 color_fff  flex flex_center"><text class="fontSize_20 mt_10">￥</text>{{data.info.retailPrice}} <text class="vip color_f73 font_weight fontSize_20">会员 <text class="fontSize_20">￥</text><text class="fontSize_36">{{data.info.vipPrice}}</text></text></view>
+	</view>
+	<view class="font_weight color_212 fontSize_26">
+		<!-- <image ></image> -->
+		会员全场最低价
+	</view>
+	<image class="pricesBg" src="../../static/images/g.png"></image>
+</view>
+<view class="bigBox">
+	<view class="pd_20">
+		<view class="flex mt_30 btna">
+			<view class="fontSize_30 color_212 flex_1">{{data.info.name}}</view>
+			<view class="fontSize_24 color_999 text_right ml_50">
+				<button open-type="share" class="flex flex_center">
+					<image class="share" src="../../static/images/j.png"></image>
+					<view class="ml_10">分享</view>
+				</button>
+			</view>
+		</view>
+
+		<view class="flex justify_sb mt_20 fontSize_24 color_999">
+			<view>一件包邮（偏远地区除外）</view>
+			<view>已售{{data.info.soldNum}}件</view>
+		</view>
+		<!-- <view class="pd_10"> -->
+		<view class="vipReduce flex_center  flex justify_sb  mt_30 fontSize_30 color_ffc" bindtap="toVip">
+			<view>
+				<image class="vip1" src="../../static/images/vip1.png"></image> 升级VIP全年省，此单减{{data.discountPrice}}
+			</view>
+
+			<view catchtap='toVip' class="reduceMon fontSize_24 color_212 text_center">
+				<view class=" mt_10">首月{{data.levelPrice}}元</view>
+				<view class="font_weight ">立即升级</view>
+			</view>
+		</view>
+		<!-- </view> -->
+
+	</view>
+	<view class="borders mt_20"></view>
+	<view class="params pd_20">
+		<view class="flex justify_sb flex_center cells" bindtap="toAddressList">
+			<view class="fontSize_26 color_999" wx:if='{{address.id}}'> 送至 <text class="color_555">{{address.province}} {{address.city}} {{address.county}}</text></view>
+			<view class="fontSize_26 color_999" wx:if='{{!address.id}}'>选择地址</view>
+			<view>
+				<image style="width: 15rpx; height:25rpx" src="../../static/images/arrow.png"></image>
+			</view>
+		</view>
+		<view class="flex justify_sb flex_center cells" catchtap="showCS" data-type="2">
+			<view class="fontSize_26 color_999"> 服务 <text class="color_555">48小时发货，不支持7天无理由退货</text></view>
+			<view>
+				<image style="width: 15rpx; height:25rpx" src="../../static/images/arrow.png"></image>
+			</view>
+		</view>
+		<view class="flex justify_sb flex_center cells" catchtap='showSpec' data-type="2">
+			<view class="fontSize_26 color_999"> 已选 <text class="color_555">{{data.info.unit}}</text></view>
+			<view>
+				<image style="width: 15rpx; height:25rpx;" src="../../static/images/arrow.png"></image>
+			</view>
+		</view>
+		<view class="flex justify_sb flex_center cells" bindtap="showCS" data-type="1"
+    wx:if='{{data.attribute.length}}'>
+			<view class="fontSize_26 color_999"> 参数 <text class="color_555">{{data.attribute[0].attribute}}</text></view>
+			<view>
+				<image style="width: 15rpx; height:25rpx;" src="../../static/images/arrow.png"></image>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="">
+	<import src="/utils/towxml/entry.wxml" />
+	<template is="entry" data="{{...content}}" />
+</view>
+
+<view class="shopCart flex flex_center fontSize_30 color_fff">
+	<view class="ml_30">
+		<button class="flex flex_center justify_center flex_column" open-type='contact'>
+			<image style="width:40rpx;height:39rpx" src="../../static/images/f.png" class="mb_10"></image>
+			<view class="fontSize_24 color_212">客服</view>
+		</button>
+	</view>
+	<view class="flex flex_center justify_center flex_column ml_40">
+		<view class="cart  mt_10" catchtap='toCartPage'>
+			<image style="width:38rpx;height:32rpx" src="../../static/images/e.png" class="mb_10"></image>
+			<view class="dot color_fff fontSize_12" wx:if='{{carNum}}'>{{carNum}}</view>
+		</view>
+		<view class="fontSize_24 color_212">购物车</view>
+	</view>
+	<view class="flex_1 "></view>
+	<view class="addCart flex flex_center justify_center" catchtap='showSpec' data-type="1">加入购物车</view>
+	<view class="bug flex flex_center justify_center" catchtap='showSpec' data-type="2">立即购买</view>
+</view>
+
+<view class="popup-select" wx:if='{{isShow}}'>
+	<view class="flex popup-select-box">
+		<view>
+			<image class="popup-select-img" src="{{specGood.length ? specGood[0].url : data.info.picUrl}}"></image>
+		</view>
+		<view>
+			<view class="color_f73 fontSize_30 font_weight mt_10">￥{{specGood.length ? specGood[0].price : data.info.retailPrice}}</view>
+			<view class="color_555 fontSize_24 mt_10">请选择</view>
+		</view>
+
+	</view>
+	<view class="pd_30">
+		<view wx:for-item='item1' wx:for='{{data.specificationList}}' :key='index'>
+			<view class="color_555 fontSize_24 mb_10">{{item1.name}}</view>
+			<view class="flex age-select color_212 fontSize_24 flex_wrap flex_center">
+				<view class="selected {{item2.cur ? 'color_000' : ''}}" 
+				wx:for-item='item2' wx:for='{{item1.valueList}}' :key='item2.id' data-name="{{item1.name}}" data-item2="{{item2}}" bindtap="handleSpec">{{item2.value}}</view>
+			</view>
+		</view>
+		<view class="flex justify_sb buy-num mt_30 flex_center">
+			<view class="color_555 fontSize_24">购买数量</view>
+			<view class="flex addBuss flex_center">
+				<view class="color_fff text_center   rece fontSize_24" bindtap="sub">
+					<!-- <image wx:if='{{shhowImg}}' class="add" src="../../static/images/less.png"></image> -->
+					<image class="add" src="../../static/images/lesss.png"></image>
+				</view>
+				<view class="color_212 fontSize_30 pd_10">{{num}}</view>
+				<view bindtap="add">
+					<image class="add" src="../../static/images/add.png"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="comfire-btn color_fff fontSize_30" bindtap="sure">确定</view>
+</view>
+<view class="mask" wx:if='{{isShow || goodDetails}}' bindtap="hidden"></view>
+
+<view class="popup-select" wx:if='{{goodDetails}}' style="padding-bottom: 50rpx;">
+	<view class="good_title fontSize_30 color_555 text_center">
+		<view class="flex_1">{{ltype == 1 ? '商品参数' : '服务说明'}}</view>
+		<view class="fontSize_28 color_999 close" bindtap="hidden">X</view>
+	</view>
+
+	<view class="pd_30" wx:for='{{data.attribute}}' :key='index' wx:if="{{ltype == 1}}">
+		<view class="flex flex_center buy-num">
+			<view class="color_999 fontSize_26 w160">{{item.attribute}}</view>
+			<view class="color_555 fontSize_26 flex_1">{{item.value}}</view>
+		</view>
+	</view>
+  <view class="pd_30" wx:if="{{ltype == 2}}">
+		<view class="flex flex_center buy-num">
+			<view class="color_999 fontSize_26 w160">全场包邮</view>
+			<view class="color_555 fontSize_26 flex_1 ml_20">西子贝全场商品支持全国范围内包邮,除了港澳台和部分偏远地区（如新疆、西藏、内蒙古等）外，您无需承担运费</view>
+		</view>
+		<view class="flex flex_center buy-num">
+			<view class="color_999 fontSize_26 w160">48小时发货</view>
+			<view class="color_555 fontSize_26 flex_1 ml_20">支持48小时发货（法定节假日或促销活动期间以平台通知为准，因自然灾害等不可抗力因素造成发货延迟时除外）</view>
+		</view>
+		<view class="flex flex_center buy-num">
+			<view class="color_999 fontSize_26 w160">7天无忧售后</view>
+			<view class="color_555 fontSize_26 flex_1 ml_20">签收后7天内如有商品质量问题，破损，错发等非买家原因导致的问题，提供有效凭证可获得补贴或退货退款，退货运费有平台承担</view>
+		</view>
+	</view>
+	<!-- <view class="comfire-btn color_fff fontSize_30" bindtap="sure">确定</view> -->
+</view>

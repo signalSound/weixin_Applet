@@ -1,0 +1,101 @@
+<view class="daily-tasks">
+	<image class="bean-bg" src="../../static/images/bean.png"></image>
+	<view class="daily-tasks-infos">
+	<view catchtap="benRecord" class="benRecord fontSize_24 color_fff"><image  src="../../static/images/66.png"></image> 明细</view>
+		<view class="daily-tasks-infos-height flex  flex_center">
+			<view>
+				<view class="daily-tasks-actors">
+					<open-data type="userAvatarUrl"></open-data>
+				</view>
+			</view>
+			<view class="fontSize_30 color_fff">
+				<view><open-data type="userNickName"></open-data> 
+				<image  wx:if='{{beanLists.userLevel !== 0}}' class="daily-tasks-infos-vip" src="../../static/images/VIP-1.png"></image>
+				</view>
+				
+				<view class="fontSize_24 " wx:if='{{beanLists.userLevel}}' >
+					VIP有效期 {{beanLists.expireTime}}
+				</view>
+				<view class="fontSize_24 "  wx:else>
+					普通用户
+				</view>
+			</view>
+		</view>
+		<view class="sign-box">
+			<view class="flex justify_sb color_333">
+				<view class="fontSize_24">乐豆余额 <text class="fontSize_20 color_bbb">1元=100乐豆</text></view>
+				<view class=" fontSize_24 color_7d3" catchtap="handleBtn">去赚钱</view>
+			</view>
+			<view class="flex bean-num justify_sb flex_end ">
+				<view class="fontSize_60  font_weight color_7d3">{{beanLists.legume || 0}}
+					<image class="bean-img" src="../../static/images/55.png"></image>
+				</view>
+				<view class="bean-btn fontSize_24 color_fff mb_10" catchtap='toMybean'>去提现</view>
+			</view>
+
+		</view>
+
+
+	</view>
+	<view class="flex justify_sb">
+	<view class="bean_text fontSize_30 color_212 font_weight">乐豆购买VIP会员</view>
+	<view class="bean_text fontSize_24 color_999" catchtap="bugVip">去了解会员权益</view>
+
+	</view>
+	<view class="flex open-vip justity_sb pd_30">
+		<!-- <view class="fontSize_24 color_555 open-vip-bg">
+			<view class="open-vip-mt">连续包月</view>
+			<view class="fontSize_20 font_weight open-vip-m">￥25</view>
+			<view class="fontSize_20 color_999">每月自动续费 可随时取消</view>
+		</view> -->
+
+		<view class="fontSize_24 color_555  open-vip-bg {{item.id == curMember.id ?'open-vip-activeBg':''}} " wx:for='{{vipLevel.LitemallLevelGrade}}'   catchtap="openVip" data-item='{{item}}'>
+			<view class="fontSize_20 margin_left" >{{item.gradeRemarks}}</view>
+			<view class="flex justity_sb open-vip-mt">
+					<view  class="flex_2">{{item.gradeCode == 'levelmonth' ? '1个月VIP' : item.gradeCode == 'levelseason' ? '3个月VIP' : '1年VIP'}}</view>
+						<view class="fontSize_36 font_weight text_right money"><text class="fontSize_20">￥</text>{{item.gradePrice}}</view>
+			</view>
+		</view>
+
+		<!-- <view class="fontSize_24 color_555 open-vip-bg">
+			<view class="open-vip-mt">一季度</view>
+			<view class="fontSize_20 font_weight open-vip-m">￥70</view>
+			<view class="fontSize_20 color_999">相当于￥22/月</view>
+		</view> -->
+
+		<!-- <view class="fontSize_24 color_555 open-vip-bg">
+			<view class="open-vip-mt">一个月</view>
+			<view class="fontSize_20 font_weight open-vip-m">￥30</view>
+			<view class="fontSize_20 color_999">相当于￥23/月</view>
+		</view> -->
+	</view>
+	<view class="pd_30">
+		<view class="vip-open-btn color_212 font_weight fontSize_34" catchtap="handleBtnVip" data-gradecode='{{vipLevel.LitemallLevelGrade[0].id}}'>立即以{{curMember.gradePrice * 100}}豆购买</view>
+	</view>
+	<view class="pd_30 mt_20">
+	<view class="flex beanBug justify_sb fontSize_24 ">
+		<view>乐豆购买商品</view>
+		<view catchtap="handleBtnClick">去商城
+			<image class="arrow" src="../../static/images/arrow.png"></image>
+		</view>
+	</view>
+			<scroll-view scroll-x class='mb_30 scr'>
+				<view class='sv_item flex flex_column' wx:for="{{beanLists.hotGoodsList}}" wx:for-item="item2" wx:key="{{item2.id}}"  data-item='{{item2}}' catchtap='toProductDetails'>
+					<view class='sv_pic flex flex_center justify_center relative'>
+						<view >{{item2.column_goods_list}}</view>
+						<image class='w_100 h_100' src="{{item2.picUrl}}"></image>
+					</view>
+					<view class="pd_10">
+						<view class="color_212 fontSize_26 mt_10 esp">
+							{{item2.name}}
+						</view>
+						<!-- <view class="color_999 fontSize_22  esp">
+							￥258
+						</view> -->
+						<view class="color_f73 fontSize_24 font_weight"><text class="fontSize_18">￥</text>	{{item2.retailPrice}}</view>
+					</view>
+				</view>
+			</scroll-view>
+	</view>
+
+</view>

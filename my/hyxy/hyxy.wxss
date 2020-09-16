@@ -1,0 +1,53 @@
+/**基础风格样式**/
+@import '/utils/towxml/style/main.wxss';
+
+/**主题配色（浅色样式）**/
+@import '/utils/towxml/style/theme/light.wxss';
+
+/**主题配色（深色样式）**/
+@import '/utils/towxml/style/theme/dark.wxss';
+
+.container {
+  padding-top: 20rpx;
+}
+
+.text_item {
+  text-indent: 2em;
+}
+
+.img_item + .text_item {
+  margin-top: 20rpx;
+}
+
+.text_item + .img_item {
+  margin-top: 20rpx;
+}
+
+.text_item + .text_item {
+  margin-top: 20rpx;
+}
+
+.img_item + .img_item {
+  margin-top: 20rpx;
+}
+
+/* 内容 */
+
+.h2w__main {
+  /* padding: 50rpx 30rpx; */
+  padding-top: 0;
+  margin: 0 20rpx;
+}
+
+.content_txt {
+  line-height: 50rpx;
+}
+
+.content + .content {
+  margin-top: 20rpx;
+}
+
+.h2w__div {
+  width: auto !important;
+  margin: 0 !important;
+}

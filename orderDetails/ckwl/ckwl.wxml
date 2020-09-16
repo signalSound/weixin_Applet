@@ -1,0 +1,16 @@
+<view class='mt_20 box1 fontSize_26 color_333'>
+  <view class="mb_20">快递公司：{{data.shipperName}}</view>
+  <view>快递号：{{data.LogisticCode}}</view>
+</view>
+
+<view class="mt_20 p_30 bg_fff">
+  <view class="fontSize_26 color_333 mb_30">物流信息</view>
+
+  <view>
+    <view class="item pd_40 fontSize_24 color_bbb" wx:for='{{data.Traces}}' :key='index'>
+      <view class="mb_20 re {{index == 0 ? 'color_f73d57 font_weight' : ''}}">{{item.AcceptStation}}</view>
+      <view>{{item.AcceptTime}}</view>
+      <view class="item_bot {{index == 0 ? 'bg_F73D57' : ''}}"></view>
+    </view>
+  </view>
+</view> 

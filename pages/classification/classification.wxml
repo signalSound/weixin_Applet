@@ -1,0 +1,22 @@
+<view class="classDetail">
+	<view class="details fontSize_36 color_fff" wx:if='dataList.length'>
+		<view class="text">{{name}}</view>
+		<view class="pd_20" wx:for='{{dataList}}' wx:key='index' data-id="{{item.id}}"
+		catchtap='toProductDetails' data-id="{{item.id}}">
+			<view class="flex powdered-box bg_fff mb_20">
+				<view class="p_20">
+					<image class="imgs" src="{{item.picUrl}}"></image>
+				</view>
+				<view class="fontSize_24 color_999 p_20 ">
+					<view class="fontSize_30 color_555 mt_10 esp font_weight">{{item.name}}</view>
+					<view>{{item.brief}}</view>
+					<view class="mt_20">已售 {{item.soldNum}}件</view>
+					<view class="mt_30">会员价 <text class="color_f73 font_weight">￥{{item.vipPrice}}</text></view>
+				</view>
+
+				<image class="add" src="../../static/images/add.png"></image>
+			</view>
+		</view>
+	</view>
+	<view class="none_c" wx:if="{{dataList.length === 0}}">暂无数据~</view>
+</view>

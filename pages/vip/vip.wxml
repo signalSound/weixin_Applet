@@ -1,0 +1,184 @@
+<view class="v">
+  <view class="vip">
+    <view class="flex vip-card flex_column justify_sb color_fff ">
+      <view class="fontSize_36 flex flex_center">
+        <open-data type="userNickName" wx:if='{{vipLevel.userLevel}}'></open-data>
+        <view wx:if='{{!vipLevel.userLevel}}'>优心贝会员</view>
+        <image wx:if='{{vipLevel.userLevel}}' class="daily-tasks-infos-vip" src="../../static/images/VIP-1.png"></image>
+      </view>
+      <view class="flex_1 fontSize_24 mt_30">{{vipLevel.userLevel?'VIP :'+ vipLevel.expireTime:'成为会员每笔消费最高可省40%，预计月省超1000元'}}</view>
+      <!-- <view class="color_fff  fontSize_24"  wx:if="{{vipLevel.userLevel}}"   catchtap="handleBtnClick">{{vipLevel.expireTime}} 续费</view> -->
+      <view class="color_212 vip-btn fontSize_24" bindtap="handleBtnClick">{{vipLevel.userLevel? '立即续费':'立即开通'}}</view>
+
+      <image class="vip-card-img" src="../../static/images/vip.png"></image>
+    </view>
+    <view class="flex vip-icon flex_wrap color_f4d fontSize_24">
+      <view class="vip-cion-box">
+        <view class="vip-cion-one">
+          <image class="img1" src="../../static/images/vipPrice.png"></image>
+        </view>
+        <view class="mt_20">全场VIP价</view>
+      </view>
+      <view class="vip-cion-box">
+        <view class="vip-cion-one">
+          <image class="img2" src="../../static/images/a.png"></image>
+        </view>
+        <view class="mt_20">邀请奖励</view>
+      </view>
+      <view class="vip-cion-box">
+        <view class="vip-cion-one">
+          <image class="img3" src="../../static/images/esm.png"></image>
+        </view>
+        <view class="mt_20">全场包邮</view>
+      </view>
+      <view class="vip-cion-box">
+        <view class="vip-cion-one">
+          <image class="img4" src="../../static/images/share.png"></image>
+        </view>
+        <view class="mt_20">分享赚钱</view>
+      </view>
+      <view class="vip-cion-box">
+        <view class="vip-cion-one">
+          <image class="img5" src="../../static/images/b.png"></image>
+        </view>
+        <view class="mt_20">官方社群</view>
+      </view>
+      <view class="vip-cion-box">
+        <view class="vip-cion-one">
+          <image class="img6" src="../../static/images/c.png"></image>
+        </view>
+        <view class="mt_20">专属客服</view>
+      </view>
+      <view class="vip-cion-box">
+        <view class="vip-cion-one">
+          <image class="img7" src="../../static/images/pre.png"></image>
+
+        </view>
+        <view class="mt_20">特惠商品</view>
+      </view>
+      <view class="vip-cion-box">
+        <view class="vip-cion-one">
+          <image class="img8" src="../../static/images/d.png"></image>
+        </view>
+        <view class="mt_20">限时提前抢</view>
+      </view>
+      <view class="flex open-vip mt_50 justity_sb">
+
+
+        <!-- <view class="fontSize_24 color_fff open-vip-bg ">
+					<view class="open-vip-mt">一季度</view>
+					<view class="fontSize_20 font_weight open-vip-m">￥266</view>
+					<view class="fontSize_20">相当于￥23/月</view>
+				</view> -->
+
+        <view class="fontSize_24 color_555 open-vip-bg {{item.id == curMember.id ?'open-vip-activeBg':''}} " wx:for='{{vipLevel.LitemallLevelGrade}}' catchtap="openVip" data-item='{{item}}'>
+          <view class="open-vip-mt">{{item.gradeCode == 'levelmonth' ? '1个月VIP' : item.gradeCode == 'levelseason' ? '3个月VIP' : '年卡会员'}}</view>
+          <view class="fontSize_40 font_weight open-vip-m">
+            <text class="fontSize_24">￥</text>{{item.gradePrice}}</view>
+          <view class="fontSize_18">{{item.gradeRemarks}}</view>
+        </view>
+
+        <view class="fontSize_24 color_999 open-vip-bg">
+          <view class="open-vip-mt open-vip-mt-last">更多>> </view>
+          <view>会员活动</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="vip-content pd_30">
+    <view class="vip-open-btn color_212 fontSize_34 font_weight mt_10" catchtap="handleBtnVip">立即以{{curMember.gradePrice}}元开通会员</view>
+    <!-- <view class="fontSize_24 color_555 text_center mt_50">开通VIP前阅读《会员服务协议》</view> -->
+    <view class="vip-equity vip-equity-top">
+      <view class="vip-equity-title">
+        <view class="fontSize_34 color_212 text_center mb_40 font_weight">权益介绍</view>
+        <image class="title-img" src="../../static/images/t.png"></image>
+        <view class="color_212 fontSize_26 font_weight vip-equity-left-border">权益一 ：全场VIP价</view>
+        <view class="fontSize_24 color_999">商城购物时，全场进货价 </view>
+      </view>
+      <scroll-view scroll-x class='mb_30 scr'>
+        <view class='sv_item flex flex_column' wx:for="{{vipLevel.hotGoodsList}}" wx:for-item="item2" wx:key="{{item2.id}}" data-item='{{item2}}' catchtap='toProductDetails'>
+          <view class='sv_pic flex flex_center justify_center relative'>
+            <!-- <view >{{item2.column_goods_list}}</view> -->
+            <image class='w_100 h_100' src="{{item2.picUrl}}"></image>
+          </view>
+          <view class="pd_10">
+            <view class="color_212 fontSize_26 mt_10 esp">
+              {{item2.name}}
+            </view>
+            <!-- <view class="color_999 fontSize_22  esp">
+							￥258
+						</view> -->
+            <view class="color_f73 fontSize_24 mt_10">
+              <text class="color_999 fontSize_24">会员</text>
+              <text class="font_weight"><text class="fontSize_18">￥</text>{{item2.vipPrice}}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <!-- <view class="vip-equity">
+			<view class="vip-equity-title">
+				<view class="color_212 fontSize_26 font_weight vip-equity-left-border">权益二 ：分享赚钱</view>
+				<view class="fontSize_24 color_999">商城购物时，全场进货价 </view>
+			</view>
+			<view class="flex text_center vip-equity-box">
+				<view class="fontSize_20 color_555 flex_1">
+					<image class="vip-equity-img" src="../../static/images/官方社群.png"></image>
+					<view class="fontSize_24 color_212 mt_10 mb_10">专属会员群</view>
+					<view>社群导师1对1 </view>
+					<view>手把手教你赚钱</view>
+				</view>
+				<view class="fontSize_20 color_555 flex_1 ">
+					<image class="vip-equity-img" src="../../static/images/专属客服.png"></image>
+					<view class="fontSize_24 color_212 mt_10 mb_10">无忧售后</view>
+					<view>退货退款优先处理 </view>
+					<view>专属客服</view>
+				</view>
+			</view>
+		</view> -->
+    <view class="vip-equity">
+      <view class="vip-equity-title">
+        <view class="color_212 fontSize_26 font_weight vip-equity-left-border">权益二 ：专属服务</view>
+        <view class="fontSize_24 color_999">无忧服务，专属客服</view>
+      </view>
+      <view class="flex text_center vip-equity-box">
+        <view class="fontSize_20 color_555 flex_1">
+          <image class="vip-equity-img" src="../../static/images/b.png"></image>
+          <view class="fontSize_24 color_212 mt_10 mb_10">专属会员群</view>
+          <view>社群导师1对1 </view>
+          <view>手把手教你赚钱</view>
+        </view>
+        <view class="fontSize_20 color_555 flex_1 ">
+          <!-- <view></view> -->
+          <image class="vip-equity-img" src="../../static/images/c.png"></image>
+          <view class="fontSize_24 color_212 mt_10 mb_10">无忧售后</view>
+          <view>退货退款优先处理 </view>
+          <view>专属客服</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</view>
+
+<!-- 支付弹窗选择 -->
+<!-- <view class="mask"></view>
+<view class="paySpring">
+	<view class="fontSize_30 color_212 payMethold text_center">支付方式</view>
+	<view class="flex pay_select pd_40 justify_sb flex_center">
+		<view class="color_555 fontSize_30">
+			<image src="../../static/images/微信支付.png"></image> 微信支付
+		</view>
+		<view class="paid-select {{show?'paid-select-dot':''}}">
+		</view>
+	</view>
+	<view class="flex pay_select pd_40 justify_sb flex_center">
+		<view class="color_555 fontSize_30">
+			<image src="../../static/images/支付宝.png"></image> 支付宝
+		</view>
+		<view class="paid-select {{show?'':'paid-select-dot'}}">
+		</view>
+	</view>
+	<view class="fontSize_34 color_fff conform text_center">确定</view>
+</view> -->

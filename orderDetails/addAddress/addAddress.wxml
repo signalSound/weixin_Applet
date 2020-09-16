@@ -1,0 +1,40 @@
+<view class="add_bg">
+  <view class="input_bg pd_20 flex flex_center">
+    <view class="color_333 fontSize_24 ">收货人</view>
+    <view class="flex_1">
+      <input class="inputs  fontSize_24 color_333" value='{{params.name}}' placeholder="请输入收货人" bindinput='handleName'></input>
+    </view>
+  </view>
+
+  <view class="input_bg pd_20 flex flex_center">
+    <view class="color_333 fontSize_24 " >手机号码</view>
+    <view class="flex_1">
+      <input class="inputs  fontSize_24 color_333" value='{{params.tel}}' placeholder="请输入联系方式" bindinput='handleTel'></input>
+    </view>
+  </view>
+
+  <view class="input_bg selectArea pd_20 flex flex_center  fontSize_24 color_333">
+    <!-- <view class="color_333 fontSize_24 ">省市地区</view> -->
+
+    <picker mode="region" bindchange="bindRegionChange" style="width:100%" custom-item="{{customItem}}">
+      <view class="picker">
+        请选择省份：{{params.province}}{{params.city}}{{params.county}}
+      </view>
+     <image class="img" src="../../static/images/arrow.png"></image>
+
+    </picker>
+    <!-- <view class="flex_1 text_right color_bbb fontSize_24 ">
+     请选择
+    </view> -->
+  </view>
+
+  <view class="input_bg pd_20 flex flex_center">
+    <view class="color_333 fontSize_24 " >详细地址</view>
+    <view class="flex_1">
+      <input class="inputs  fontSize_24 color_333"  bindinput='handleDetais' value='{{params.addressDetail}}' placeholder="请输入详细地址"></input>
+    </view>
+  </view>
+
+  <view class="address_btn color_fff fontSize_30" catchtap="getAddressList">保存</view>
+
+</view>

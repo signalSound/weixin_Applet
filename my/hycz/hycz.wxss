@@ -1,0 +1,51 @@
+.member_box{
+  height: 150rpx;
+  background: #FFF8E9;
+}
+.tx_pic{
+  width:80rpx;
+  height:80rpx;
+  border-radius:50%;
+  overflow: hidden;
+}
+.time{
+  font-size: 26rpx;
+  color: #A49980;
+  margin-top: 14rpx;
+}
+
+.box1{
+  width:705rpx;
+  height:120rpx;
+  background:rgba(255,248,233,1);
+  border-radius:10rpx;
+  position: relative;
+}
+.th{
+  width:120rpx;
+  height:40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  background:rgba(247,61,87,1);
+  font-size: 24rpx;
+  color: #FFF8E9;
+  border-radius:10rpx;
+  right: 0;
+  top: -20rpx;
+  position: absolute;
+}
+.btn{
+  width:705rpx;
+  height:88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background:linear-gradient(90deg,rgba(245,221,170,1) 0%,rgba(239,189,108,1) 100%);
+  border-radius:44rpx;
+  font-size:30rpx;
+  color: #21212B;
+  margin: 80rpx auto 30rpx;
+}
+.jt_pic{
+  width: 15rpx;
+  height: 25rpx;
+}

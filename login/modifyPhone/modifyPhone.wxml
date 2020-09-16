@@ -1,0 +1,25 @@
+
+
+<view class="login">
+  <view class="mt_50">
+    <input  value="{{params.phone}}" bindinput="handlePhone" class="fontSize_30 color_333 login-inputs" placeholder="请输入手机账号"></input>
+  </view>
+     <view class="mt_30 login-groud">
+    <input value="{{params.phoneCode}}" bindinput="handlePhoneCode" class="fontSize_30 color_333 login-inputs" placeholder="验证码"></input>
+    <view class="login-code color_f73 fontSize_30 {{is_show?'show':'hide'}}"  bindtap="clickVerify">获取验证码</view>
+		<view class="login-code color_f73 fontSize_30 {{is_show?'hide':'show'}}"  >重新发送{{last_time}}秒</view>
+  </view>
+
+  <view class="mt_30">
+    <input value="{{params.mobile}}" bindinput="handleMobile" class="fontSize_30 color_333 login-inputs" placeholder="请输入新手机账号"></input>
+  </view>
+   <view class="mt_30 login-groud">
+    <input value="{{params.code}}" bindinput="handleCode" class="fontSize_30 color_333 login-inputs" placeholder="验证码"></input>
+    <view class="login-code color_f73 fontSize_30 {{is_shows?'show':'hide'}}"  bindtap="clickVerifys">获取验证码</view>
+		<view class="login-code color_f73 fontSize_30 {{is_shows?'hide':'show'}}"  >重新发送{{last_time}}秒</view>
+  </view>
+
+  <view class="login-btn fontSize_34" catchtap="modifityMobile">确认修改</view>
+
+</view>
+

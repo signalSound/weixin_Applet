@@ -1,0 +1,118 @@
+<view class="orderPaid">
+	<!-- <view class="pd_30 orderPaid-time">
+		<view class="color_212 fontSize_30 mt_30">待付款</view>
+		<view class="color_f73 fontSize_24 mt_30 orderPaid-time-count">14分48秒后自动取消</view>
+	</view> -->
+	<view class="flex orderPaid-address fontSize_30 color_212 pd_30 " bindtap="toAddressList">
+		<view class="flex_1 flex" wx:if='{{address.id}}'>
+			<view>收件人：</view>
+			<view>
+				<view class="mb_10">{{address.name}} {{address.tel}}</view>
+				<view class=" fontSize_22 color_999 ">{{address.province}} {{address.city}} {{address.county}}</view>
+				<view class=" fontSize_22 color_999 orderPaid-address-details">{{address.addressDetail}}</view>
+			</view>
+		</view>
+		<view class="flex_1 orderPaid-address-details" wx:if='{{!address.id}}'>请选择收货地址</view>
+		<view class="flex flex_center">
+			<image class="orderPaid-arrow" src="../../static/images/arrow.png"></image>
+		</view>
+	</view>
+
+	<view class="flex commodity mt_10" wx:for='{{data.checkedGoodsList}}' :key='index'>
+		<view>
+			<image class="commodity-img" src="{{item.picUrl}}"></image>
+		</view>
+		<view class="flex_1">
+			<view class="fontSize_26 color_333 mt_10 esp">{{item.goodsName}}</view>
+			<view class="fontSize_24 color_bbb mt_10">{{item.txt}}</view>
+			<view class="flex justify_sb fontSize_24 color_999 mt_30">
+				<view class="fontSize_20 color_f73 font_weight">
+					<text class="fontSize_16"> ￥</text>{{item.price}}
+				</view>
+				<view>×{{item.number}}</view>
+			</view>
+		</view>
+	</view>
+
+
+	<view class="flex fee_service justify_sb pd_30 flex_center fontSize_24">
+		<view class="color_555">运费</view>
+		<view class="color_212">{{data.freightPrice ? data.freightPrice : '包邮'}}</view>
+	</view>
+
+	<view class="flex fee_service flex_center">
+		<view class="color_555 fontSize_26 ml_30">乐豆抵用</view>
+		<view class="color_555 fontSize_24 ml_10 flex_1">(1:100)</view>
+		<view class="h_100 flex flex_center pd_30">
+			<view class="yq" bindtap="handleLD">
+				<view class="yuan" wx:if='{{isLD}}'></view>
+			</view>
+		</view>
+	</view>
+	<!-- <view class="flex fee_service justify_sb pd_30 flex_center fontSize_24 mt_10"
+	bindtap="toMyVoucher">
+		<view class="color_555">平台优惠劵</view>
+		<view class="color_f73" wx:if='{{data.couponPrice}}'>-￥{{data.couponPrice}}</view>
+		<view class="flex flex_center">
+			<view class="color_333" wx:if='{{!data.couponPrice}}'>选择优惠券</view>
+			<image class="orderPaid-arrow ml_10" src="../../static/images/arrow.png"></image>
+		</view>
+	</view> -->
+	<view class="flex fee_service fee_service-height justify_sb pd_30 flex_center fontSize_24 mt_10">
+		<view class="color_999">商品总额</view>
+		<view class="color_212">￥{{data.goodsTotalPrice}}</view>
+	</view>
+	<view class="flex fee_service fee_service-height justify_sb pd_30 flex_center fontSize_24 mt_10">
+		<view class="color_999">乐豆</view>
+		<view class="color_f73">-￥{{data.legumePrice}}</view>
+	</view>
+	<!-- <view class="flex fee_service fee_service-height justify_sb pd_30 flex_center fontSize_24 ">
+		<view class="color_999">优惠劵</view>
+		<view class="color_f73">￥{{data.couponPrice}}</view>
+	</view> -->
+
+	<view class="flex fee_service fee_service-height justify_sb pd_30 flex_center fontSize_24 ">
+		<view class="color_999">运费</view>
+		<view class="color_212">{{data.freightPrice ? data.freightPrice : '包邮'}}</view>
+	</view>
+
+	<view class="flex fee_service justify_sb pd_30 flex_center fontSize_24">
+		<view class="color_555"></view>
+		<view class="color_333">还需支付：<text class="color_f73 font_weight">￥{{data.actualPrice}}</text></view>
+	</view>
+
+	<!-- <view class="flex fee_service justify_sb pd_30 flex_center fontSize_24 mt_10">
+		<view class="color_555">支付方式</view>
+		<view class="color_333"></view>
+	</view> -->
+
+	<!-- <view class="flex fee_service justify_sb pd_30 flex_center fontSize_24 mt_10">
+		<view class="color_555">
+			<image class='fee-service-pay' src="../../static/images/微信支付.png"></image>
+			微信支付
+		</view>
+		<view class="color_333">
+	
+			<view class="paid-select {{show?'paid-select-dot':''}}">
+			</view>
+		</view>
+	</view> -->
+	<!-- <view class="flex fee_service justify_sb pd_30 flex_center fontSize_24 ">
+		<view class="color_555">
+			<image class='fee-service-pay' src="../../static/images/支付宝.png"></image>
+			支付宝
+		</view>
+		<view class="color_333">
+			<view class="paid-select"></view>
+		</view>
+	</view> -->
+
+
+	<view class="paid-operation flex flex_center fontSize_30">
+		<view class="pay-number flex_1 fontSize_30 color_f73 font_weight pd_30">
+			<view class="mb_10">合计: ￥{{data.actualPrice}} </view>
+			<view class="fontSize_24 color_999">请在15分钟内完成付款</view>
+		</view>
+		<view class="paid-now color_fff" bindtap="pay">去付款</view>
+	</view>
+</view>

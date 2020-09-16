@@ -1,0 +1,57 @@
+.login {
+  padding: 0 75rpx;
+}
+.login-mobail {
+  padding-right: 50rpx;
+}
+.login-bottom-border {
+  width: 70rpx;
+  height: 8rpx;
+  background-color: #F73D57;
+  border-radius: 4rpx;
+}
+.login-groud {
+  position: relative;
+}
+.login-inputs {
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 44rpx;
+  padding-left: 30rpx;
+  padding-right: 200rpx;
+  background-color: #f5f5f5;
+}
+.login-code {
+  position: absolute;
+  right: 30rpx;
+  bottom: 25rpx
+}
+.login-btn {
+  background-color: #F73D57;
+  color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  /* width: 80%; */
+  margin: 200rpx auto 0;
+}
+.login-agreem {
+  position: relative;
+  padding-left: 60rpx;
+}
+.login-cirle {
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 1px solid #555;
+  left: 30rpx;
+}
+
+.hide{
+  display: none;
+ }
+ .show{
+  display: block;
+ }

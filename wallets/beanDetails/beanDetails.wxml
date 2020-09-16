@@ -1,0 +1,18 @@
+<view >
+  <view class="flex b-header justify_sb fontSize_30 color_333">
+      <view class="color_f73">时间</view>
+      <view class="text_center">类型</view>
+      <view class="text_right">收支</view>
+  </view>
+
+  <view class="flex b-header justify_sb fontSize_24 color_666" wx:for='{{dataList}}' :key='index'>
+      <view class="color_999 fontSize_20">{{item.addTime}}</view>
+      <view class="text_center">{{item.legumeSourceName}}</view>
+      <view class="color_f73 text_right">{{item.legume}}</view>
+  </view>
+</view>
+
+<!-- 提示订单数量 -->
+<view class='none fontSize_30 color_999' wx:if="{{dataList.length == total}}">
+	没有更多数据
+</view>

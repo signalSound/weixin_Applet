@@ -1,0 +1,44 @@
+
+
+page {
+  background-color: #F5F5F5;
+}
+.vipVouchar {
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+  padding-left: 30rpx;
+  position: relative;
+}
+.vipVouchar::after {
+  content: '';
+  display: block;
+  width: 100rpx;
+  height: 3rpx;
+  border-radius: 1.5rpx;
+  background-color: #F73D57;
+  position: absolute;
+  bottom: 0;
+  left: 50rpx;
+}
+.vouchar {
+  border-top: 1px solid #F5F5F5;
+  height: 140rpx;
+  padding: 20rpx 30rpx; 
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.vouchar-box-img {
+  margin-right: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.vouchar-btn {
+  background: linear-gradient(to right,#F5DDAA,#EFBC6B);
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  width: 160rpx;
+}

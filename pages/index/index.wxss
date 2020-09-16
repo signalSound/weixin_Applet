@@ -1,0 +1,284 @@
+.pad_right {
+  padding-right: 40rpx;
+}
+.search {
+  height: 68rpx;
+  border-radius: 34rpx;
+}
+.invite {
+  width: 100rpx;
+  text-align: center;
+  margin-right: 10rpx;
+}
+.bussBox {
+  text-align: center;
+  padding: 0 20rpx;
+}
+.bussBox view {
+  width: 20%;
+}
+.img {
+  width: 40rpx;
+  height: 40rpx;
+  /* background-color: pink; */
+  margin: 0 auto;
+  text-align: center;
+}
+.bussBox view view{
+  width: 100%;
+}
+
+.bImg {
+  margin-bottom: 10rpx;
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+}
+.imgs {
+  height: 100%;
+  /* background-color: red; */
+
+}
+.imgss {
+  height: 100%;
+  background-color: green;
+}
+.powdered {
+  padding-top: 20rpx;
+}
+
+.powdered .powdered-box {
+  position: relative;
+  height: 240rpx;
+  border-radius: 10rpx;
+}
+.powdered .imgs {
+  height: 100%;
+  width: 212rpx;
+  /* background-color: pink; */
+}
+.activity {
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  height: 160rpx;
+  line-height: 160rpx;
+  text-align: center;
+  /* padding-bottom: 20rpx; */
+  position: relative;
+  /* box-sizing: border-box; */
+}
+.column_pic{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.add {
+  width: 60rpx;
+  height: 60rpx;
+  background-color: #F73D57;
+  border-radius: 50%;
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+}
+.cart {
+  position: fixed;
+  top: 50%;
+  right: 30rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  transform: translateY(40rpx);
+  background: rgba(0, 0, 0, 0.3);
+}
+.cart image {
+  width: 50rpx;
+  height: 42rpx;
+  position: absolute;
+  top: 25rpx;
+  left: 15rpx;
+}
+.cart .dot {
+  /* width: 20rpx; */
+  /* height: 20rpx; */
+  background: #F73D57;
+  border-radius: 50%;
+  padding: 4rpx 8rpx;
+  /* line-height: 20rpx; */
+  position: absolute;
+  right: 0;
+  top: 4rpx;
+  text-align: center;
+}
+
+.slide_image {
+  width: 100%;
+  height: 410rpx;
+}
+
+.swiper {
+  height: 411rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper swiper {
+  height: 411rpx;
+}
+
+.point {
+  position: absolute;
+  bottom: 80rpx;
+  width: 100%;
+}
+
+.point_item {
+  width: 12rpx;
+  height: 12rpx;
+  background-color: white;
+  border-radius: 50%;
+  margin: 0 8rpx;
+}
+
+.point_item_cur {
+  background-color: #368c67;
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  margin: 0 8rpx;
+}
+
+.search_box {
+  padding: 0 38rpx;
+  margin-top: -55rpx;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.search_list {
+  height: 110rpx;
+  border-radius: 54rpx;
+  background: #fff;
+  padding-left: 32rpx;
+  box-sizing: border-box;
+}
+
+/* .search {
+  border-right: 2px solid #b5b5b5;
+} */
+
+.sousuo {
+  position: relative;
+  top: 3rpx;
+} 
+
+.ipt_ph {
+  text-align: center;
+  letter-spacing: 22rpx;
+  color: c0c0c0;
+}
+
+.sort_box {
+  padding: 40rpx 0;
+  padding-bottom: 20rpx;
+  background: #fff;
+  border-radius: 22rpx;
+}
+
+.sort_item {
+  width: 33.3333%;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.sort_pic {
+  width: 86rpx;
+  height: 86rpx;
+  border-radius: 50%;
+}
+
+.title_box {
+  height: 90rpx;
+  line-height: 90rpx;
+  padding-left: 36rpx;
+  padding-right: 28rpx;
+  box-sizing: border-box;
+}
+
+.title_su {
+  width: 10rpx;
+  height: 32rpx;
+  border-radius: 5rpx;
+  margin-right: 24rpx;
+}
+
+.sv_item {
+  width: 160rpx;
+  height: 268rpx;
+  /* box-shadow: 0px 9rpx 8rpx 0px rgba(160, 160, 160, 0.4); */
+  /* border-radius: 10rpx; */
+  border-bottom-right-radius: 10rpx;
+  background: #fff;
+  padding-right: 20rpx;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.scr .sv_item:nth-of-type(1) {
+  border-bottom-left-radius: 10rpx;
+}
+.scr .sv_item:nth-last-of-type(1) {
+  border-bottom-left-radius: 10rpx;
+}
+.discount {
+  position: absolute;
+  min-width: 40rpx;
+  height: 90rpx;
+  line-height: 130rpx;
+  border-radius: 22rpx;
+  left: 26rpx;
+  top: -45rpx;
+  text-align: center;
+  z-index: 99;
+}
+
+.bga {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 302rpx;
+  height: 232rpx;
+}
+
+.sv_pic {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+
+.scr {
+  /* padding-top: 20rpx; */
+  height: 268rpx;
+  white-space: nowrap;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  box-sizing: border-box;
+}
+.box {
+  height: 15rpx;
+}
+
+.swipers {
+  padding: 0 20rpx;
+  /* border-radius: 20rpx; */
+  /* overflow: hidden; */
+}
+.swipers swiper {
+  border-radius: 10rpx;
+}
+swiper-item  {
+  border-radius: 10rpx;
+}

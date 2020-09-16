@@ -1,0 +1,31 @@
+<view>
+	<view class=' flex flex_center p_20 mb_20'>
+		<view class="search flex_1">
+			<input class="fontSize_30 bg_f5 inputs" placeholder="请输入商品名称" value="{{defaultKeyword.keyword}}" bindconfirm="handleSearch" bindinput='handleVal'></input>
+			<icon catchtap='toSearch' type="search" size="18" color="#999" class='sousuo' />
+		</view>
+		<text class="color_555 fontSize_30"  bindtap='handleSearch'>搜索</text>
+	</view>
+
+	<view class=" pd_30">
+		<view wx:if='{{historyList.length}}'>
+			<view class="flex justify_sb flex_center mb_40">
+				<view class="fontSize_30 color_555 bord flex_1"> 搜索历史</view>
+				<view class="fontSize_24 color_bbb flex flex_center" bindtap="clearHistory">
+					<image style="width:30rpx;height:28rpx;background:#eee" src="../../static/images/delect.png"></image>
+					<view class="ml_10">清空记录</view>
+				</view>
+			</view>
+			<view class="flex flex_wrap history">
+				<view class="history_item" wx:for='{{historyList}}' wx:key='index' data-item="{{item}}" bindtap="getKeyWord">{{item.keyword}}</view>
+			</view>
+		</view>
+
+		<view wx:if='{{hotList.length}}'>
+			<view class="fontSize_30 color_555 mb_40 bord">热搜词</view>
+			<view class="flex flex_wrap history">
+				<view class="history_item" wx:for='{{hotList}}' wx:key='index' data-item="{{item}}" bindtap="getKeyWord">{{item.keyword}}</view>
+			</view>
+		</view>
+	</view>
+</view>

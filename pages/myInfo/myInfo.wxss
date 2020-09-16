@@ -1,0 +1,313 @@
+page {
+  background-color: #f5f5f5;
+}
+.bean-bg {
+  height: 440rpx;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.daily-tasks-infos {
+  height: 440rpx;
+  padding: 0 30rpx;
+  position: relative;
+}
+.my-invite-code {
+    height: 100rpx;
+}
+.invite-code {
+  margin-right: 15rpx;
+}
+.my-invite-img {
+  width: 35rpx;
+  vertical-align: middle;
+  height: 35rpx;
+}
+.my-set-img {
+  width: 35rpx;
+  height: 32rpx;
+  margin-right: 5rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.daily-tasks-actors {
+  margin-right: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+ 
+   overflow: hidden;
+  border-radius: 50%;
+}
+.daily-tasks-infos-mon {
+  height: 60rpx;
+  width: 230rpx;
+  display: inline-block;
+  border-bottom-left-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+  line-height: 60rpx;
+  text-align: center;
+  margin-bottom: 40rpx;
+  background: rgba(0, 0, 0, 0.1);
+}
+.daily-tasks-infos-vip {
+  width: 30rpx;
+  height: 27rpx;
+}
+.daily-tasks-infos-pee {
+  width: 24rpx;
+  height: 24rpx;
+  background: #eee;
+  margin-right: 10rpx;
+}
+.daily-tasks-infos-yuan {
+  width: 24rpx;
+  height: 24rpx;
+  background: #eee;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+  box-sizing: border-box;
+}
+.sign-box {
+  position: absolute;
+  width: 85%;
+  margin-right: 30rpx;
+  padding: 30rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  bottom: -45rpx;
+}
+.my-order-tab {
+  margin-top: 65rpx;
+  background-color: #fff;
+  height: 225rpx;
+  border-radius: 10rpx;
+}
+.my-order-tab-m {
+  margin-top: 20rpx;
+  height: 360rpx;
+  padding-bottom: 20rpx;
+}
+.my-look-order {
+  padding: 0 20rpx;
+  height: 77rpx;
+  line-height: 77rpx;
+  border-bottom: 1px solid #f5f5f5;
+}
+.order-tab-arrow {
+  width: 15rpx;
+  height: 25rpx;
+  vertical-align: middle;
+}
+.my-order-status {
+  text-align: center;
+}
+.my-order-status view {
+  flex:1;
+}
+.my-order-tool {
+  width: 100%;
+}
+.my-order-tool view {
+  float: left;
+  width: 25%;
+}
+.my-order-status-t {
+  margin-top: 30rpx;
+}
+.my-order-status-t button {
+  font-size: 24rpx;
+text-align: center;
+color: #999;
+width: 0rpx;
+padding: 0;
+}
+.my-order-status-t button:not([size='mini']) {
+  width: 150rpx;
+}
+.my-order-tool view view {
+  width: 100%;
+  padding-top: 10rpx;
+}
+.my-order-status-img {
+  width: 60rpx;
+  height: 60rpx;
+}
+.img_size {
+  width: 60rpx;
+  height: 58rpx;
+}
+.img_size1 {
+  width: 60rpx;
+  height: 56rpx;
+}
+.img_size2 {
+  width: 64rpx;
+  height: 51rpx;
+}
+.img_size3 {
+  width: 64rpx;
+  height: 52rpx;
+}
+.my-order-status-img0 {
+  width: 60rpx;
+  height: 60rpx;
+}
+.my-order-status-img1 {
+  width: 50rpx;
+  height: 60rpx;
+}
+
+.my-order-status-img2 {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.my-order-status-img3 {
+  width: 55rpx;
+  height: 60rpx;
+}
+
+.my-order-status-img4 {
+  width: 48rpx;
+  height: 60rpx;
+}
+
+.my-order-status-img5 {
+  width: 57rpx;
+  height: 60rpx;
+}
+.my-code-fill {
+    height: 80rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+}
+.code-fill-icon {
+  width: 40rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.daily-tasks-sign {
+    width: 70rpx;
+    height: 90rpx;
+    background: #F5F5F5;
+    border-radius: 10rpx;
+    text-align: center;
+    margin-top: 40rpx;
+    margin-right: 20rpx;
+}
+.daily-tasks-sign-img {
+  width: 30rpx;
+  height: 30rpx;
+  background: pink;
+}
+.address_btn {
+  background-color: #F73D57;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  width: 60%;
+  margin: 30rpx auto 0;
+}
+.bean-btn {
+  background-color: #F73D57;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  width: 140rpx;
+}
+
+.sign-btn {
+  background: linear-gradient(to right, #F5DDAA,#EFBD6C);
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  width: 150rpx;
+  color: #7C5E2D;
+}
+.daily-tasks-every {
+  margin-top: 300rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  padding-top: 25rpx;
+  position: relative;
+}
+.daily-tasks-every-info {
+  position: relative;
+  border-bottom: 1px solid #f5f5f5;
+  padding-bottom: 20rpx;
+}
+.daily-tasks-user {
+  padding-right: 20rpx;
+}
+.user-pee {
+  width: 24rpx;
+  height: 24rpx;
+  background-color: #eee;
+}
+.dails-tasks-btn {
+  width: 120rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+  background-color: #F73D57;
+  text-align: center;
+  line-height: 50rpx;
+  position: absolute;
+  right: 20rpx;
+  bottom: 30rpx;
+}
+.bean-img {
+  width: 48rpx;
+  height: 60rpx;
+  margin-right: 25rpx;
+}
+
+.sv_item {
+  width: 180rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+  display: inline-block;
+  border-radius: 10rpx;
+  position: relative;
+  overflow: hidden;
+}
+.sv_pic {
+  width: 180rpx;
+  height: 100rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  padding-left: 20rpx;
+}
+
+.scr {
+  height: 100rpx;
+  margin-top: 25rpx;
+  white-space: nowrap;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.box {
+  height: 72rpx;
+  background-color: #f5f5f5;
+}
+.tcLogin{
+  width:600rpx;
+  height:88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  margin: 50rpx auto 0;
+  background:rgba(221,221,221,1);
+  border-radius:44rpx;
+  font-size:34rpx;
+  color: #fff;
+}
+.tel_btn{
+  width: auto !important;
+  font-size: 24rpx !important;
+  margin-left: 20rpx !important;
+  padding: 0 !important;
+}

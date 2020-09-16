@@ -1,0 +1,18 @@
+.set_bg {
+  height: 100vh;
+  background-color: #F3F3F3;
+}
+.cell {
+  background-color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-top: 1px solid #f3f3f3;
+}
+.img {
+  width: 15rpx;
+  height: 25rpx;
+}
+.tel_btn{
+  width: 100% !important;
+  font-weight: 400 !important;
+}

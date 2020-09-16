@@ -1,0 +1,97 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/productDetails/productDetails",
+    "pages/vip/vip",
+    "pages/myInfo/myInfo",
+    "pages/classification/classification"
+  ],
+  "subpackages": [
+    { "root": "search",
+      "pages": [
+        "seachShop/seachShop",
+        "seachRecords/seachRecords"
+      ]
+    },
+    { "root": "invites",
+      "pages": [
+        "inviteCode/inviteCode",
+        "inviteMoney/inviteMoney",
+        "inviteRecord/inviteRecord",
+        "inviteFriends/inviteFriends"
+      ]
+    },
+    { "root": "orderDetails",
+      "pages": [
+        "addressList/addressList",
+        "addAddress/addAddress",
+        "orderPaid/orderPaid",
+        "fillOrder/fillOrder",
+        "allOrders/allOrders",
+        "tkyy/tkyy",
+        "ckwl/ckwl"
+      ]
+    },
+    { "root": "my",
+      "pages": [
+        "mySet/mySet",
+        "dailyTasks/dailyTasks",
+        "shoppingCart/shoppingCart",
+        "myVoucher/myVoucher",
+        "hycz/hycz",
+        "hyxy/hyxy",
+        "fwxy/fwxy"
+      ]
+    },
+    { "root": "wallets",
+      "pages": [
+        "myBean/myBean",
+        "beanDetails/beanDetails",
+        "beanHome/beanHome"
+      ]
+    },
+    { "root": "login",
+      "pages": [
+        "loginPage/loginPage",
+        "modifyPass/modifyPass",
+        "modifyPhone/modifyPhone"
+      ]
+    }
+
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  
+  "tabBar": {
+    "color": "#BBBBBB",
+    "selectedColor": "#F73D57",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/static/images/home.png",
+        "selectedIconPath": "/static/images/aHome.png"
+      },
+      {
+        "pagePath": "pages/vip/vip",
+        "text": "会员",
+        "iconPath": "/static/images/vips.png",
+        "selectedIconPath": "/static/images/aVip.png"
+      },
+      {
+        "pagePath": "pages/myInfo/myInfo",
+        "text": "我的",
+        "iconPath": "/static/images/myIcons.png",
+        "selectedIconPath": "/static/images/myIcon.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

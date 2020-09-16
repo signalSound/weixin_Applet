@@ -1,0 +1,6 @@
+<view class="text_center invite color_555 fontSize_30">请输入邀请码</view>
+<view class="pd_75">
+	<input bindinput="handleCode" class="color_333 fontSize_30 inputs" value="{{invitationCode}}" placeholder="请输入邀请码"></input>
+	<view class="btn {{show == 1 && !istx ? 'btns' :''}} fontSize_34 color_fff text_center" catchtap="{{show == 1 && !istx ? 'comfirmBtn' : 'ytx'}}">确定</view>
+	<view class="btn btns fontSize_34 color_fff text_center" catchtap="skipOverBtn">跳过，暂时不填写</view>
+</view>

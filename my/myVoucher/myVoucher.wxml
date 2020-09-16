@@ -1,0 +1,21 @@
+<view class=" vou">
+<view class="vipVouchar fontSize_30 color_212">VIP优惠劵</view>
+  <view class="vouchar flex flex_center" wx:for='{{couponList}}' :key='index'
+  data-id="{{item.id}}">
+    <view class="vouchar-box">
+      <image class="vouchar-box-img"  src="../../static/images/00.png"></image>
+    </view>
+    <view class="flex_1 ">
+      <view class="color_f73 fontSize_30 ">满{{item.min}}减{{item.discount}}</view>
+      <view class="color_bbb fontSize_22 mt_20">{{item.endTime}} 前可以使用</view>
+      <!-- <view class="color_bbb fontSize_22 mt_20">会员充值券 (活动除外)</view> -->
+    </view>
+    <view class="vouchar-btn color_212 fontSize_24" catchtap="{{type == 1 ? 'select' : 'handleBtnClick'}}"
+    data-item="{{item}}">去使用</view>
+  </view>
+</view>
+
+<!-- 提示订单数量 -->
+<view class='none fontSize_30 color_999' wx:if="{{couponList.length == total}}">
+	没有更多数据
+</view>

@@ -1,0 +1,96 @@
+<view class="orderPaid">
+	<view class="pd_30 orderPaid-time">
+		<view class="color_212 fontSize_30 mt_30 statusText">{{orderDetails.orderInfo.orderStatusText}}</view>
+		<view wx:if='{{orderDetails.orderInfo.handleOption.pay === true}}' class="color_f73 fontSize_24 mt_20 orderPaid-time-count">
+			{{txt}}
+		</view>
+		<!-- 隐藏快递单号 -->
+		<!-- <view class="color_555 fontSize_24 mt_30 orderPaid-time-count" wx:if="{{orderDetails.orderInfo.handleOption.confirm === true}}">快递单号:{{orderDetails.orderInfo.orderSn}} <text class="color_f73">查看</text></view> -->
+	</view>
+	<view class="flex orderPaid-address fontSize_30 color_212 pd_30 ">
+		<view>收件人：</view>
+		<view class="">
+			<view>{{orderDetails.orderInfo.consignee}} {{orderDetails.orderInfo.mobile}}</view>
+			<view class=" fontSize_22 color_999 orderPaid-address-details">{{orderDetails.orderInfo.address}}</view>
+		</view>
+	</view>
+
+	<view class="flex commodity mt_10" wx:for="{{orderDetails.orderGoods}}" wx:key="{{item.id}}"
+	bindtap="toProductDetails" data-id="{{item.goodsId}}">
+		<view>
+			<image class="commodity-img" src="{{item.picUrl}}"></image>
+		</view>
+		<view class="flex_1">
+			<view class="fontSize_26 color_333 mt_10 esp">{{item.goodsName}} </view>
+			<view class="fontSize_24 color_bbb mt_10">{{item.specifications}}</view>
+			<view class="flex justify_sb fontSize_24 color_999 mt_30">
+				<view class="fontSize_20 color_f73 font_weight">
+					<text class="fontSize_16"> ￥</text>{{item.price}}
+				</view>
+				<view>×{{item.number}}</view>
+			</view>
+		</view>
+	</view>
+	<view class="flex fee_service justify_sb pd_30 flex_center fontSize_24">
+		<view class="color_555">运费</view>
+		<view class="color_212">{{orderDetails.orderInfo.freightPrice == 0 ? '包邮' : orderDetails.orderInfo.freightPrice}}</view>
+	</view>
+		<view class="flex fee_service pd_30 flex_center" wx:if='{{orderDetails.orderInfo.handleOption.pay === true}}'>
+		<view class="color_555 fontSize_26">乐豆抵用</view>
+		<view class="color_555 fontSize_24 ml_10 flex_1">(1:100)</view>
+		<view class="yq">
+			<view class="yuan" wx:if='{{orderDetails.orderInfo.legumeFlag}}'></view>
+		</view>
+	</view>
+	<!-- <view class="flex fee_service justify_sb pd_30 flex_center fontSize_24 mt_10">
+		<view class="color_555">平台优惠劵</view>
+		<view class="color_f73 ">-￥{{orderDetails.orderInfo.couponPrice }}</view>
+	</view> -->
+	<view class="flex fee_service fee_service-height justify_sb pd_30 flex_center fontSize_24 mt_10">
+		<view class="color_999">商品总额</view>
+		<view class="color_212">￥{{orderDetails.orderInfo.goodsPrice}}</view>
+	</view>
+	<!-- <view class="flex fee_service fee_service-height justify_sb pd_30 flex_center fontSize_24 mt_10">
+		<view class="color_999">乐斗</view>
+		<view class="color_f73">-￥{{orderDetails.orderInfo.legumePrice}}</view>
+	</view> -->
+	<!-- <view class="flex fee_service fee_service-height justify_sb pd_30 flex_center fontSize_24 ">
+		<view class="color_999">优惠劵</view>
+		<view class="color_f73">￥800.00</view>
+	</view> -->
+
+	<view class="flex fee_service fee_service-height justify_sb pd_30 flex_center fontSize_24 ">
+		<view class="color_999">运费</view>
+		<view class="color_212">{{orderDetails.orderInfo.freightPrice == 0 ? '包邮' : orderDetails.orderInfo.freightPrice}}</view>
+	</view>
+
+
+
+	<view class="flex fee_service justify_sb pd_30 flex_center fontSize_24">
+		<view class="color_555"></view>
+		<view class="color_333">还需支付：<text class="color_f73 font_weight">￥{{orderDetails.orderInfo.actualPrice}}</text></view>
+	</view>
+
+	<view class="order-no fontSize_24 color_999 mt_20">
+		<view>订单编号：{{orderDetails.orderInfo.orderSn}} <text class="color_555" catchtap="copy" data-orderSn='{{orderDetails.orderInfo.orderSn}}'>复制</text></view>
+		<view>创建时间：{{orderDetails.orderInfo.addTime}}</view>
+	</view>
+
+	<view class="paid-operation flex flex_center fontSize_30" wx:if='{{orderDetails.orderInfo.handleOption.pay === true}}'>
+		<view class="pay-number fontSize_24">
+			还需支付：￥{{orderDetails.orderInfo.actualPrice}}
+		</view>
+		<view class="cancel-order flex_1 color_555" catchtap="CancelBtn" data-id='{{orderDetails.orderInfo.id}}'>取消订单</view>
+		<view class="paid-now color_fff" catchtap='getWXPayVoucher' data-id='{{orderDetails.orderInfo.id}}'>立即付款</view>
+	</view>
+
+	<view class="paid-operation  fontSize_30" wx:if='{{orderDetails.orderInfo.handleOption.confirm === true}}'>
+		<view class="confirm color_fff" catchtap='confirmBtn' data-id='{{orderDetails.orderInfo.id}}'>确认收货</view>
+	</view>
+	<!-- <view class="paid-operation  fontSize_30" wx:if='{{orderDetails.orderInfo.handleOption.confirm === true}}'>
+		<view class="confirm color_fff" catchtap='confirmBtn' data-id='{{orderDetails.orderInfo.id}}'>申请退款</view>
+	</view>
+	<view class="paid-operation  fontSize_30" wx:if='{{orderDetails.orderInfo.handleOption.confirm === true}}'>
+		<view class="confirm color_fff" catchtap='confirmBtn' data-id='{{orderDetails.orderInfo.id}}'>查看物流</view>
+	</view> -->
+</view>
